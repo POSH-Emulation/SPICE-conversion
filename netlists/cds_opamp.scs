@@ -1,0 +1,398 @@
+// Generated for: spectre
+// Generated on: Jan  8 17:06:44 2019
+// Design library name: Two_Stage_OpAmp
+// Design cell name: bias_amp_AC
+// Design view name: config
+simulator lang=spectre
+global 0
+parameters v_input=1 cload=100f rload=1G vdd=1
+include "$GF14HOME/Models/Spectre/models/LN14LPP_Spectre_STD.lib" section=monte
+
+// Library name: cmos14lpp
+// Cell name: lvtpfet_b_s
+// View name: schematic
+// Inherited view list: spectre cmos_sch cmos.sch schematic veriloga ahdl
+//pspice dspf
+subckt lvtpfet_b_s_pcell_01 d g s b
+parameters l=14n nfin=2 nf=1 par=(1) par_nf=(1)*(1) pdevdops=1 pdevlgeos=1 \
+        pdevwgeos=1 psw_acv_sign=1 plnest=1 pldist=1 plorient=0 cpp=78n \
+        fpitch=48n xpos=-99 ypos=-99 ptwell=0 sca=0 scb=0 scc=0 \
+        pre_layout_local=-1 ngcon=1 p_vta=0 p_la=0 u0mult_fet=1 \
+        lle_rxrxa=78n lle_rxrxb=78n lle_rxrxn=192n lle_rxrxs=192n \
+        lle_pcrxn=65n lle_pcrxs=65n lle_nwa=2u lle_nwb=2u lle_nwn=192n \
+        lle_nws=192n lle_ctne=0 lle_ctnw=0 lle_ctse=0 lle_ctsw=0 \
+        lle_sctne=0 lle_sctnw=0 lle_sctse=0 lle_sctsw=0 dtemp=0 l_shape=0 \
+        l_shape_s=0 nsig_dop1=0 nsig_dop2=0 nsig_dibl=0 nsig_pc=0 \
+        nsig_rx=0 fc_index=0 fc_sigma=3
+    S1 (n1 g s b) lvtpfet m=1 l=l nfin=nfin nf=nf par=par par_nf=par_nf \
+        asej=(62n)*(11n)*7  adej=(62n)*(11n)*7 psej=(1)*7*(2*(62n)+(11n))  \
+        pdej=(1)*7*(2*(62n)+(11n)) pdevdops=pdevdops pdevlgeos=pdevlgeos \
+        pdevwgeos=pdevwgeos psw_acv_sign=psw_acv_sign plnest=plnest \
+        pldist=pldist plorient=plorient cpp=cpp fpitch=fpitch xpos=xpos \
+        ypos=ypos ptwell=ptwell sca=sca scb=scb scc=scc \
+        pre_layout_local=pre_layout_local ngcon=ngcon p_vta=p_vta \
+        p_la=p_la u0mult_fet=u0mult_fet lle_sa=70n lle_sb=70n \
+        lle_rxrxa=lle_rxrxa lle_rxrxb=lle_rxrxb lle_rxrxn=lle_rxrxn \
+        lle_rxrxs=lle_rxrxs lle_pcrxn=lle_pcrxn lle_pcrxs=lle_pcrxs \
+        lle_nwa=lle_nwa lle_nwb=lle_nwb lle_nwn=lle_nwn lle_nws=lle_nws \
+        lle_ctne=lle_ctne lle_ctnw=lle_ctnw lle_ctse=lle_ctse \
+        lle_ctsw=lle_ctsw lle_sctne=lle_sctne lle_sctnw=lle_sctnw \
+        lle_sctse=lle_sctse lle_sctsw=lle_sctsw lrsd=26n dtemp=dtemp \
+        l_shape=l_shape l_shape_s=l_shape_s nsig_dop1=nsig_dop1 \
+        nsig_dop2=nsig_dop2 nsig_dibl=nsig_dibl nsig_pc=nsig_pc \
+        nsig_rx=nsig_rx fc_index=fc_index fc_sigma=fc_sigma
+    S0 (d g n1 b) lvtpfet m=1 l=l nfin=nfin nf=nf par=par par_nf=par_nf \
+        asej=(62n)*(11n)*7  adej=(62n)*(11n)*7 psej=(1)*7*(2*(62n)+(11n))  \
+        pdej=(1)*7*(2*(62n)+(11n)) pdevdops=pdevdops pdevlgeos=pdevlgeos \
+        pdevwgeos=pdevwgeos psw_acv_sign=psw_acv_sign plnest=plnest \
+        pldist=pldist plorient=plorient cpp=cpp fpitch=fpitch xpos=xpos \
+        ypos=ypos ptwell=ptwell sca=sca scb=scb scc=scc \
+        pre_layout_local=pre_layout_local ngcon=ngcon p_vta=p_vta \
+        p_la=p_la u0mult_fet=u0mult_fet lle_sa=70n lle_sb=70n \
+        lle_rxrxa=lle_rxrxa lle_rxrxb=lle_rxrxb lle_rxrxn=lle_rxrxn \
+        lle_rxrxs=lle_rxrxs lle_pcrxn=lle_pcrxn lle_pcrxs=lle_pcrxs \
+        lle_nwa=lle_nwa lle_nwb=lle_nwb lle_nwn=lle_nwn lle_nws=lle_nws \
+        lle_ctne=lle_ctne lle_ctnw=lle_ctnw lle_ctse=lle_ctse \
+        lle_ctsw=lle_ctsw lle_sctne=lle_sctne lle_sctnw=lle_sctnw \
+        lle_sctse=lle_sctse lle_sctsw=lle_sctsw lrsd=26n dtemp=dtemp \
+        l_shape=l_shape l_shape_s=l_shape_s nsig_dop1=nsig_dop1 \
+        nsig_dop2=nsig_dop2 nsig_dibl=nsig_dibl nsig_pc=nsig_pc \
+        nsig_rx=nsig_rx fc_index=fc_index fc_sigma=fc_sigma
+ends lvtpfet_b_s_pcell_01
+// End of subcircuit definition.
+
+// Library name: cmos14lpp
+// Cell name: lvtnfet_b_s
+// View name: schematic
+// Inherited view list: spectre cmos_sch cmos.sch schematic veriloga ahdl
+//pspice dspf
+subckt lvtnfet_b_s_pcell_1 d g s b
+parameters l=14n nfin=2 nf=1 par=(1) par_nf=(1)*(1) pdevdops=1 pdevlgeos=1 \
+        pdevwgeos=1 psw_acv_sign=1 plnest=1 pldist=1 plorient=0 cpp=78n \
+        fpitch=48n xpos=-99 ypos=-99 ptwell=0 sca=0 scb=0 scc=0 \
+        pre_layout_local=-1 ngcon=1 p_vta=0 p_la=0 u0mult_fet=1 \
+        lle_rxrxa=78n lle_rxrxb=78n lle_rxrxn=192n lle_rxrxs=192n \
+        lle_pcrxn=65n lle_pcrxs=65n lle_nwa=2u lle_nwb=2u lle_nwn=192n \
+        lle_nws=192n lle_ctne=0 lle_ctnw=0 lle_ctse=0 lle_ctsw=0 \
+        lle_sctne=0 lle_sctnw=0 lle_sctse=0 lle_sctsw=0 dtemp=0 l_shape=0 \
+        l_shape_s=0 nsig_dop1=0 nsig_dop2=0 nsig_dibl=0 nsig_pc=0 \
+        nsig_rx=0 fc_index=0 fc_sigma=3
+    S0 (d g s b) lvtnfet m=1 l=l nfin=nfin nf=nf par=par par_nf=par_nf \
+        asej=(62n)*(11n)*7  adej=(62n)*(11n)*7 psej=(1)*7*(2*(62n)+(11n))  \
+        pdej=(1)*7*(2*(62n)+(11n)) pdevdops=pdevdops pdevlgeos=pdevlgeos \
+        pdevwgeos=pdevwgeos psw_acv_sign=psw_acv_sign plnest=plnest \
+        pldist=pldist plorient=plorient cpp=cpp fpitch=fpitch xpos=xpos \
+        ypos=ypos ptwell=ptwell sca=sca scb=scb scc=scc \
+        pre_layout_local=pre_layout_local ngcon=ngcon p_vta=p_vta \
+        p_la=p_la u0mult_fet=u0mult_fet lle_sa=70n lle_sb=70n \
+        lle_rxrxa=lle_rxrxa lle_rxrxb=lle_rxrxb lle_rxrxn=lle_rxrxn \
+        lle_rxrxs=lle_rxrxs lle_pcrxn=lle_pcrxn lle_pcrxs=lle_pcrxs \
+        lle_nwa=lle_nwa lle_nwb=lle_nwb lle_nwn=lle_nwn lle_nws=lle_nws \
+        lle_ctne=lle_ctne lle_ctnw=lle_ctnw lle_ctse=lle_ctse \
+        lle_ctsw=lle_ctsw lle_sctne=lle_sctne lle_sctnw=lle_sctnw \
+        lle_sctse=lle_sctse lle_sctsw=lle_sctsw lrsd=26n dtemp=dtemp \
+        l_shape=l_shape l_shape_s=l_shape_s nsig_dop1=nsig_dop1 \
+        nsig_dop2=nsig_dop2 nsig_dibl=nsig_dibl nsig_pc=nsig_pc \
+        nsig_rx=nsig_rx fc_index=fc_index fc_sigma=fc_sigma
+ends lvtnfet_b_s_pcell_1
+// End of subcircuit definition.
+
+// Library name: cmos14lpp
+// Cell name: lvtnfet_b_s
+// View name: schematic
+// Inherited view list: spectre cmos_sch cmos.sch schematic veriloga ahdl
+//pspice dspf
+subckt lvtnfet_b_s_pcell_2 d g s b
+parameters l=14n nfin=2 nf=1 par=(1) par_nf=(1)*(1) pdevdops=1 pdevlgeos=1 \
+        pdevwgeos=1 psw_acv_sign=1 plnest=1 pldist=1 plorient=0 cpp=78n \
+        fpitch=48n xpos=-99 ypos=-99 ptwell=0 sca=0 scb=0 scc=0 \
+        pre_layout_local=-1 ngcon=1 p_vta=0 p_la=0 u0mult_fet=1 \
+        lle_rxrxa=78n lle_rxrxb=78n lle_rxrxn=192n lle_rxrxs=192n \
+        lle_pcrxn=65n lle_pcrxs=65n lle_nwa=2u lle_nwb=2u lle_nwn=192n \
+        lle_nws=192n lle_ctne=0 lle_ctnw=0 lle_ctse=0 lle_ctsw=0 \
+        lle_sctne=0 lle_sctnw=0 lle_sctse=0 lle_sctsw=0 dtemp=0 l_shape=0 \
+        l_shape_s=0 nsig_dop1=0 nsig_dop2=0 nsig_dibl=0 nsig_pc=0 \
+        nsig_rx=0 fc_index=0 fc_sigma=3
+    S0 (d g s b) lvtnfet m=1 l=l nfin=nfin nf=nf par=par par_nf=par_nf \
+        asej=(62n)*(11n)*7  adej=(62n)*(11n)*7 psej=(1)*7*(2*(62n)+(11n))  \
+        pdej=(1)*7*(2*(62n)+(11n)) pdevdops=pdevdops pdevlgeos=pdevlgeos \
+        pdevwgeos=pdevwgeos psw_acv_sign=psw_acv_sign plnest=plnest \
+        pldist=pldist plorient=plorient cpp=cpp fpitch=fpitch xpos=xpos \
+        ypos=ypos ptwell=ptwell sca=sca scb=scb scc=scc \
+        pre_layout_local=pre_layout_local ngcon=ngcon p_vta=p_vta \
+        p_la=p_la u0mult_fet=u0mult_fet lle_sa=70n lle_sb=70n \
+        lle_rxrxa=lle_rxrxa lle_rxrxb=lle_rxrxb lle_rxrxn=lle_rxrxn \
+        lle_rxrxs=lle_rxrxs lle_pcrxn=lle_pcrxn lle_pcrxs=lle_pcrxs \
+        lle_nwa=lle_nwa lle_nwb=lle_nwb lle_nwn=lle_nwn lle_nws=lle_nws \
+        lle_ctne=lle_ctne lle_ctnw=lle_ctnw lle_ctse=lle_ctse \
+        lle_ctsw=lle_ctsw lle_sctne=lle_sctne lle_sctnw=lle_sctnw \
+        lle_sctse=lle_sctse lle_sctsw=lle_sctsw lrsd=26n dtemp=dtemp \
+        l_shape=l_shape l_shape_s=l_shape_s nsig_dop1=nsig_dop1 \
+        nsig_dop2=nsig_dop2 nsig_dibl=nsig_dibl nsig_pc=nsig_pc \
+        nsig_rx=nsig_rx fc_index=fc_index fc_sigma=fc_sigma
+ends lvtnfet_b_s_pcell_2
+// End of subcircuit definition.
+
+// Library name: cmos14lpp
+// Cell name: lvtnfet_b_s
+// View name: schematic
+// Inherited view list: spectre cmos_sch cmos.sch schematic veriloga ahdl
+//pspice dspf
+subckt lvtnfet_b_s_pcell_23 d g s b
+parameters l=14n nfin=2 nf=1 par=(1) par_nf=(1)*(1) pdevdops=1 pdevlgeos=1 \
+        pdevwgeos=1 psw_acv_sign=1 plnest=1 pldist=1 plorient=0 cpp=78n \
+        fpitch=48n xpos=-99 ypos=-99 ptwell=0 sca=0 scb=0 scc=0 \
+        pre_layout_local=-1 ngcon=1 p_vta=0 p_la=0 u0mult_fet=1 \
+        lle_rxrxa=78n lle_rxrxb=78n lle_rxrxn=192n lle_rxrxs=192n \
+        lle_pcrxn=65n lle_pcrxs=65n lle_nwa=2u lle_nwb=2u lle_nwn=192n \
+        lle_nws=192n lle_ctne=0 lle_ctnw=0 lle_ctse=0 lle_ctsw=0 \
+        lle_sctne=0 lle_sctnw=0 lle_sctse=0 lle_sctsw=0 dtemp=0 l_shape=0 \
+        l_shape_s=0 nsig_dop1=0 nsig_dop2=0 nsig_dibl=0 nsig_pc=0 \
+        nsig_rx=0 fc_index=0 fc_sigma=3
+    S1 (d g n1 b) lvtnfet m=1 l=l nfin=nfin nf=nf par=par par_nf=par_nf \
+        asej=(62n)*(11n)*7  adej=(62n)*(11n)*7 psej=(1)*7*(2*(62n)+(11n))  \
+        pdej=(1)*7*(2*(62n)+(11n)) pdevdops=pdevdops pdevlgeos=pdevlgeos \
+        pdevwgeos=pdevwgeos psw_acv_sign=psw_acv_sign plnest=plnest \
+        pldist=pldist plorient=plorient cpp=cpp fpitch=fpitch xpos=xpos \
+        ypos=ypos ptwell=ptwell sca=sca scb=scb scc=scc \
+        pre_layout_local=pre_layout_local ngcon=ngcon p_vta=p_vta \
+        p_la=p_la u0mult_fet=u0mult_fet lle_sa=70n lle_sb=70n \
+        lle_rxrxa=lle_rxrxa lle_rxrxb=lle_rxrxb lle_rxrxn=lle_rxrxn \
+        lle_rxrxs=lle_rxrxs lle_pcrxn=lle_pcrxn lle_pcrxs=lle_pcrxs \
+        lle_nwa=lle_nwa lle_nwb=lle_nwb lle_nwn=lle_nwn lle_nws=lle_nws \
+        lle_ctne=lle_ctne lle_ctnw=lle_ctnw lle_ctse=lle_ctse \
+        lle_ctsw=lle_ctsw lle_sctne=lle_sctne lle_sctnw=lle_sctnw \
+        lle_sctse=lle_sctse lle_sctsw=lle_sctsw lrsd=26n dtemp=dtemp \
+        l_shape=l_shape l_shape_s=l_shape_s nsig_dop1=nsig_dop1 \
+        nsig_dop2=nsig_dop2 nsig_dibl=nsig_dibl nsig_pc=nsig_pc \
+        nsig_rx=nsig_rx fc_index=fc_index fc_sigma=fc_sigma
+    S0 (n1 g s b) lvtnfet m=1 l=l nfin=nfin nf=nf par=par par_nf=par_nf \
+        asej=(62n)*(11n)*7  adej=(62n)*(11n)*7 psej=(1)*7*(2*(62n)+(11n))  \
+        pdej=(1)*7*(2*(62n)+(11n)) pdevdops=pdevdops pdevlgeos=pdevlgeos \
+        pdevwgeos=pdevwgeos psw_acv_sign=psw_acv_sign plnest=plnest \
+        pldist=pldist plorient=plorient cpp=cpp fpitch=fpitch xpos=xpos \
+        ypos=ypos ptwell=ptwell sca=sca scb=scb scc=scc \
+        pre_layout_local=pre_layout_local ngcon=ngcon p_vta=p_vta \
+        p_la=p_la u0mult_fet=u0mult_fet lle_sa=70n lle_sb=70n \
+        lle_rxrxa=lle_rxrxa lle_rxrxb=lle_rxrxb lle_rxrxn=lle_rxrxn \
+        lle_rxrxs=lle_rxrxs lle_pcrxn=lle_pcrxn lle_pcrxs=lle_pcrxs \
+        lle_nwa=lle_nwa lle_nwb=lle_nwb lle_nwn=lle_nwn lle_nws=lle_nws \
+        lle_ctne=lle_ctne lle_ctnw=lle_ctnw lle_ctse=lle_ctse \
+        lle_ctsw=lle_ctsw lle_sctne=lle_sctne lle_sctnw=lle_sctnw \
+        lle_sctse=lle_sctse lle_sctsw=lle_sctsw lrsd=26n dtemp=dtemp \
+        l_shape=l_shape l_shape_s=l_shape_s nsig_dop1=nsig_dop1 \
+        nsig_dop2=nsig_dop2 nsig_dibl=nsig_dibl nsig_pc=nsig_pc \
+        nsig_rx=nsig_rx fc_index=fc_index fc_sigma=fc_sigma
+ends lvtnfet_b_s_pcell_23
+// End of subcircuit definition.
+
+// Library name: cmos14lpp
+// Cell name: lvtnfet_b_s
+// View name: schematic
+// Inherited view list: spectre cmos_sch cmos.sch schematic veriloga ahdl
+//pspice dspf
+subckt lvtnfet_b_s_pcell_45 d g s b
+parameters l=14n nfin=2 nf=1 par=(1) par_nf=(1)*(1) pdevdops=1 pdevlgeos=1 \
+        pdevwgeos=1 psw_acv_sign=1 plnest=1 pldist=1 plorient=0 cpp=78n \
+        fpitch=48n xpos=-99 ypos=-99 ptwell=0 sca=0 scb=0 scc=0 \
+        pre_layout_local=-1 ngcon=1 p_vta=0 p_la=0 u0mult_fet=1 \
+        lle_rxrxa=78n lle_rxrxb=78n lle_rxrxn=192n lle_rxrxs=192n \
+        lle_pcrxn=65n lle_pcrxs=65n lle_nwa=2u lle_nwb=2u lle_nwn=192n \
+        lle_nws=192n lle_ctne=0 lle_ctnw=0 lle_ctse=0 lle_ctsw=0 \
+        lle_sctne=0 lle_sctnw=0 lle_sctse=0 lle_sctsw=0 dtemp=0 l_shape=0 \
+        l_shape_s=0 nsig_dop1=0 nsig_dop2=0 nsig_dibl=0 nsig_pc=0 \
+        nsig_rx=0 fc_index=0 fc_sigma=3
+    S1 (d g n1 b) lvtnfet m=1 l=l nfin=nfin nf=nf par=par par_nf=par_nf \
+        asej=(62n)*(11n)*7  adej=(62n)*(11n)*7 psej=(1)*7*(2*(62n)+(11n))  \
+        pdej=(1)*7*(2*(62n)+(11n)) pdevdops=pdevdops pdevlgeos=pdevlgeos \
+        pdevwgeos=pdevwgeos psw_acv_sign=psw_acv_sign plnest=plnest \
+        pldist=pldist plorient=plorient cpp=cpp fpitch=fpitch xpos=xpos \
+        ypos=ypos ptwell=ptwell sca=sca scb=scb scc=scc \
+        pre_layout_local=pre_layout_local ngcon=ngcon p_vta=p_vta \
+        p_la=p_la u0mult_fet=u0mult_fet lle_sa=70n lle_sb=70n \
+        lle_rxrxa=lle_rxrxa lle_rxrxb=lle_rxrxb lle_rxrxn=lle_rxrxn \
+        lle_rxrxs=lle_rxrxs lle_pcrxn=lle_pcrxn lle_pcrxs=lle_pcrxs \
+        lle_nwa=lle_nwa lle_nwb=lle_nwb lle_nwn=lle_nwn lle_nws=lle_nws \
+        lle_ctne=lle_ctne lle_ctnw=lle_ctnw lle_ctse=lle_ctse \
+        lle_ctsw=lle_ctsw lle_sctne=lle_sctne lle_sctnw=lle_sctnw \
+        lle_sctse=lle_sctse lle_sctsw=lle_sctsw lrsd=26n dtemp=dtemp \
+        l_shape=l_shape l_shape_s=l_shape_s nsig_dop1=nsig_dop1 \
+        nsig_dop2=nsig_dop2 nsig_dibl=nsig_dibl nsig_pc=nsig_pc \
+        nsig_rx=nsig_rx fc_index=fc_index fc_sigma=fc_sigma
+    S0 (n1 g s b) lvtnfet m=1 l=l nfin=nfin nf=nf par=par par_nf=par_nf \
+        asej=(62n)*(11n)*7  adej=(62n)*(11n)*7 psej=(1)*7*(2*(62n)+(11n))  \
+        pdej=(1)*7*(2*(62n)+(11n)) pdevdops=pdevdops pdevlgeos=pdevlgeos \
+        pdevwgeos=pdevwgeos psw_acv_sign=psw_acv_sign plnest=plnest \
+        pldist=pldist plorient=plorient cpp=cpp fpitch=fpitch xpos=xpos \
+        ypos=ypos ptwell=ptwell sca=sca scb=scb scc=scc \
+        pre_layout_local=pre_layout_local ngcon=ngcon p_vta=p_vta \
+        p_la=p_la u0mult_fet=u0mult_fet lle_sa=70n lle_sb=70n \
+        lle_rxrxa=lle_rxrxa lle_rxrxb=lle_rxrxb lle_rxrxn=lle_rxrxn \
+        lle_rxrxs=lle_rxrxs lle_pcrxn=lle_pcrxn lle_pcrxs=lle_pcrxs \
+        lle_nwa=lle_nwa lle_nwb=lle_nwb lle_nwn=lle_nwn lle_nws=lle_nws \
+        lle_ctne=lle_ctne lle_ctnw=lle_ctnw lle_ctse=lle_ctse \
+        lle_ctsw=lle_ctsw lle_sctne=lle_sctne lle_sctnw=lle_sctnw \
+        lle_sctse=lle_sctse lle_sctsw=lle_sctsw lrsd=26n dtemp=dtemp \
+        l_shape=l_shape l_shape_s=l_shape_s nsig_dop1=nsig_dop1 \
+        nsig_dop2=nsig_dop2 nsig_dibl=nsig_dibl nsig_pc=nsig_pc \
+        nsig_rx=nsig_rx fc_index=fc_index fc_sigma=fc_sigma
+ends lvtnfet_b_s_pcell_45
+// End of subcircuit definition.
+
+// Library name: Two_Stage_OpAmp
+// Cell name: bias_amp
+// View name: schematic
+// Inherited view list: spectre cmos_sch cmos.sch schematic veriloga ahdl
+//pspice dspf
+subckt bias_amp avdd bias en_f en_n gnd in_m in_p out_m out_p
+    M29 (out_m M3_D avdd avdd) lvtpfet_b_s_pcell_01 m=17 l=16n nfin=7 nf=1 \
+        par=(17) par_nf=(17)*(1) pdevdops=1 pdevlgeos=1 pdevwgeos=1 \
+        psw_acv_sign=1 plnest=1 pldist=1 plorient=0 cpp=84n fpitch=48n \
+        xpos=-99 ypos=-99 ptwell=0 sca=0 scb=0 scc=0 pre_layout_local=-1 \
+        ngcon=1 p_vta=0 p_la=0 u0mult_fet=1 lle_rxrxa=78n lle_rxrxb=78n \
+        lle_rxrxn=192n lle_rxrxs=192n lle_pcrxn=55n lle_pcrxs=55n \
+        lle_nwa=2u lle_nwb=2u lle_nwn=192n lle_nws=192n lle_ctne=0 \
+        lle_ctnw=0 lle_ctse=0 lle_ctsw=0 lle_sctne=0 lle_sctnw=0 \
+        lle_sctse=0 lle_sctsw=0 dtemp=0 l_shape=0 l_shape_s=0 nsig_dop1=0 \
+        nsig_dop2=0 nsig_dibl=0 nsig_pc=0 nsig_rx=0 fc_index=0 fc_sigma=3
+    M8 (M3_D M3_D avdd avdd) lvtpfet_b_s_pcell_01 m=34 l=16n nfin=7 nf=1 \
+        par=(34) par_nf=(34)*(1) pdevdops=1 pdevlgeos=1 pdevwgeos=1 \
+        psw_acv_sign=1 plnest=1 pldist=1 plorient=0 cpp=84n fpitch=48n \
+        xpos=-99 ypos=-99 ptwell=0 sca=0 scb=0 scc=0 pre_layout_local=-1 \
+        ngcon=1 p_vta=0 p_la=0 u0mult_fet=1 lle_rxrxa=78n lle_rxrxb=78n \
+        lle_rxrxn=192n lle_rxrxs=192n lle_pcrxn=55n lle_pcrxs=55n \
+        lle_nwa=2u lle_nwb=2u lle_nwn=192n lle_nws=192n lle_ctne=0 \
+        lle_ctnw=0 lle_ctse=0 lle_ctsw=0 lle_sctne=0 lle_sctnw=0 \
+        lle_sctse=0 lle_sctsw=0 dtemp=0 l_shape=0 l_shape_s=0 nsig_dop1=0 \
+        nsig_dop2=0 nsig_dibl=0 nsig_pc=0 nsig_rx=0 fc_index=0 fc_sigma=3
+    M7 (M28_G M28_G avdd avdd) lvtpfet_b_s_pcell_01 m=34 l=16n nfin=7 nf=1 \
+        par=(34) par_nf=(34)*(1) pdevdops=1 pdevlgeos=1 pdevwgeos=1 \
+        psw_acv_sign=1 plnest=1 pldist=1 plorient=0 cpp=84n fpitch=48n \
+        xpos=-99 ypos=-99 ptwell=0 sca=0 scb=0 scc=0 pre_layout_local=-1 \
+        ngcon=1 p_vta=0 p_la=0 u0mult_fet=1 lle_rxrxa=78n lle_rxrxb=78n \
+        lle_rxrxn=192n lle_rxrxs=192n lle_pcrxn=55n lle_pcrxs=55n \
+        lle_nwa=2u lle_nwb=2u lle_nwn=192n lle_nws=192n lle_ctne=0 \
+        lle_ctnw=0 lle_ctse=0 lle_ctsw=0 lle_sctne=0 lle_sctnw=0 \
+        lle_sctse=0 lle_sctsw=0 dtemp=0 l_shape=0 l_shape_s=0 nsig_dop1=0 \
+        nsig_dop2=0 nsig_dibl=0 nsig_pc=0 nsig_rx=0 fc_index=0 fc_sigma=3
+    M28 (out_p M28_G avdd avdd) lvtpfet_b_s_pcell_01 m=17 l=16n nfin=7 \
+        nf=1 par=(17) par_nf=(17)*(1) pdevdops=1 pdevlgeos=1 pdevwgeos=1 \
+        psw_acv_sign=1 plnest=1 pldist=1 plorient=0 cpp=84n fpitch=48n \
+        xpos=-99 ypos=-99 ptwell=0 sca=0 scb=0 scc=0 pre_layout_local=-1 \
+        ngcon=1 p_vta=0 p_la=0 u0mult_fet=1 lle_rxrxa=78n lle_rxrxb=78n \
+        lle_rxrxn=192n lle_rxrxs=192n lle_pcrxn=55n lle_pcrxs=55n \
+        lle_nwa=2u lle_nwb=2u lle_nwn=192n lle_nws=192n lle_ctne=0 \
+        lle_ctnw=0 lle_ctse=0 lle_ctsw=0 lle_sctne=0 lle_sctnw=0 \
+        lle_sctse=0 lle_sctsw=0 dtemp=0 l_shape=0 l_shape_s=0 nsig_dop1=0 \
+        nsig_dop2=0 nsig_dibl=0 nsig_pc=0 nsig_rx=0 fc_index=0 fc_sigma=3
+    M10 (bias en_n net014 gnd) lvtnfet_b_s_pcell_1 m=4 l=16n nfin=7 nf=1 \
+        par=(4) par_nf=(4)*(1) pdevdops=1 pdevlgeos=1 pdevwgeos=1 \
+        psw_acv_sign=1 plnest=1 pldist=1 plorient=0 cpp=84n fpitch=48n \
+        xpos=-99 ypos=-99 ptwell=0 sca=0 scb=0 scc=0 pre_layout_local=-1 \
+        ngcon=1 p_vta=0 p_la=0 u0mult_fet=1 lle_rxrxa=78n lle_rxrxb=78n \
+        lle_rxrxn=192n lle_rxrxs=192n lle_pcrxn=55n lle_pcrxs=55n \
+        lle_nwa=2u lle_nwb=2u lle_nwn=192n lle_nws=192n lle_ctne=0 \
+        lle_ctnw=0 lle_ctse=0 lle_ctsw=0 lle_sctne=0 lle_sctnw=0 \
+        lle_sctse=0 lle_sctsw=0 dtemp=0 l_shape=0 l_shape_s=0 nsig_dop1=0 \
+        nsig_dop2=0 nsig_dibl=0 nsig_pc=0 nsig_rx=0 fc_index=0 fc_sigma=3
+    M14 (bias en_f net014 gnd) lvtnfet_b_s_pcell_2 m=4 l=16n nfin=7 nf=1 \
+        par=(4) par_nf=(4)*(1) pdevdops=1 pdevlgeos=1 pdevwgeos=1 \
+        psw_acv_sign=1 plnest=1 pldist=1 plorient=0 cpp=84n fpitch=48n \
+        xpos=-99 ypos=-99 ptwell=0 sca=0 scb=0 scc=0 pre_layout_local=-1 \
+        ngcon=1 p_vta=0 p_la=0 u0mult_fet=1 lle_rxrxa=78n lle_rxrxb=78n \
+        lle_rxrxn=192n lle_rxrxs=192n lle_pcrxn=55n lle_pcrxs=55n \
+        lle_nwa=2u lle_nwb=2u lle_nwn=192n lle_nws=192n lle_ctne=0 \
+        lle_ctnw=0 lle_ctse=0 lle_ctsw=0 lle_sctne=0 lle_sctnw=0 \
+        lle_sctse=0 lle_sctsw=0 dtemp=0 l_shape=0 l_shape_s=0 nsig_dop1=0 \
+        nsig_dop2=0 nsig_dibl=0 nsig_pc=0 nsig_rx=0 fc_index=0 fc_sigma=3
+    M12 (bias net014 gnd gnd) lvtnfet_b_s_pcell_23 m=30 l=16n nfin=7 nf=1 \
+        par=(30) par_nf=(30)*(1) pdevdops=1 pdevlgeos=1 pdevwgeos=1 \
+        psw_acv_sign=1 plnest=1 pldist=1 plorient=0 cpp=84n fpitch=48n \
+        xpos=-99 ypos=-99 ptwell=0 sca=0 scb=0 scc=0 pre_layout_local=-1 \
+        ngcon=1 p_vta=0 p_la=0 u0mult_fet=1 lle_rxrxa=78n lle_rxrxb=78n \
+        lle_rxrxn=192n lle_rxrxs=192n lle_pcrxn=55n lle_pcrxs=55n \
+        lle_nwa=2u lle_nwb=2u lle_nwn=192n lle_nws=192n lle_ctne=0 \
+        lle_ctnw=0 lle_ctse=0 lle_ctsw=0 lle_sctne=0 lle_sctnw=0 \
+        lle_sctse=0 lle_sctsw=0 dtemp=0 l_shape=0 l_shape_s=0 nsig_dop1=0 \
+        nsig_dop2=0 nsig_dibl=0 nsig_pc=0 nsig_rx=0 fc_index=0 fc_sigma=3
+    M1 (net25 net014 gnd gnd) lvtnfet_b_s_pcell_45 m=20 l=16n nfin=7 nf=1 \
+        par=(20) par_nf=(20)*(1) pdevdops=1 pdevlgeos=1 pdevwgeos=1 \
+        psw_acv_sign=1 plnest=1 pldist=1 plorient=0 cpp=84n fpitch=48n \
+        xpos=-99 ypos=-99 ptwell=0 sca=0 scb=0 scc=0 pre_layout_local=-1 \
+        ngcon=1 p_vta=0 p_la=0 u0mult_fet=1 lle_rxrxa=78n lle_rxrxb=78n \
+        lle_rxrxn=192n lle_rxrxs=192n lle_pcrxn=55n lle_pcrxs=55n \
+        lle_nwa=2u lle_nwb=2u lle_nwn=192n lle_nws=192n lle_ctne=0 \
+        lle_ctnw=0 lle_ctse=0 lle_ctsw=0 lle_sctne=0 lle_sctnw=0 \
+        lle_sctse=0 lle_sctsw=0 dtemp=0 l_shape=0 l_shape_s=0 nsig_dop1=0 \
+        nsig_dop2=0 nsig_dibl=0 nsig_pc=0 nsig_rx=0 fc_index=0 fc_sigma=3
+    M23 (out_m out_p gnd gnd) lvtnfet_b_s_pcell_45 m=20 l=16n nfin=7 nf=1 \
+        par=(20) par_nf=(20)*(1) pdevdops=1 pdevlgeos=1 pdevwgeos=1 \
+        psw_acv_sign=1 plnest=1 pldist=1 plorient=0 cpp=84n fpitch=48n \
+        xpos=-99 ypos=-99 ptwell=0 sca=0 scb=0 scc=0 pre_layout_local=-1 \
+        ngcon=1 p_vta=0 p_la=0 u0mult_fet=1 lle_rxrxa=78n lle_rxrxb=78n \
+        lle_rxrxn=192n lle_rxrxs=192n lle_pcrxn=55n lle_pcrxs=55n \
+        lle_nwa=2u lle_nwb=2u lle_nwn=192n lle_nws=192n lle_ctne=0 \
+        lle_ctnw=0 lle_ctse=0 lle_ctsw=0 lle_sctne=0 lle_sctnw=0 \
+        lle_sctse=0 lle_sctsw=0 dtemp=0 l_shape=0 l_shape_s=0 nsig_dop1=0 \
+        nsig_dop2=0 nsig_dibl=0 nsig_pc=0 nsig_rx=0 fc_index=0 fc_sigma=3
+    M24 (out_p out_p gnd gnd) lvtnfet_b_s_pcell_45 m=20 l=16n nfin=7 nf=1 \
+        par=(20) par_nf=(20)*(1) pdevdops=1 pdevlgeos=1 pdevwgeos=1 \
+        psw_acv_sign=1 plnest=1 pldist=1 plorient=0 cpp=84n fpitch=48n \
+        xpos=-99 ypos=-99 ptwell=0 sca=0 scb=0 scc=0 pre_layout_local=-1 \
+        ngcon=1 p_vta=0 p_la=0 u0mult_fet=1 lle_rxrxa=78n lle_rxrxb=78n \
+        lle_rxrxn=192n lle_rxrxs=192n lle_pcrxn=55n lle_pcrxs=55n \
+        lle_nwa=2u lle_nwb=2u lle_nwn=192n lle_nws=192n lle_ctne=0 \
+        lle_ctnw=0 lle_ctse=0 lle_ctsw=0 lle_sctne=0 lle_sctnw=0 \
+        lle_sctse=0 lle_sctsw=0 dtemp=0 l_shape=0 l_shape_s=0 nsig_dop1=0 \
+        nsig_dop2=0 nsig_dibl=0 nsig_pc=0 nsig_rx=0 fc_index=0 fc_sigma=3
+    M3 (M3_D in_p net25 gnd) lvtnfet_b_s_pcell_1 m=60 l=16n nfin=7 nf=1 \
+        par=(60) par_nf=(60)*(1) pdevdops=1 pdevlgeos=1 pdevwgeos=1 \
+        psw_acv_sign=1 plnest=1 pldist=1 plorient=0 cpp=84n fpitch=48n \
+        xpos=-99 ypos=-99 ptwell=0 sca=0 scb=0 scc=0 pre_layout_local=-1 \
+        ngcon=1 p_vta=0 p_la=0 u0mult_fet=1 lle_rxrxa=78n lle_rxrxb=78n \
+        lle_rxrxn=192n lle_rxrxs=192n lle_pcrxn=55n lle_pcrxs=55n \
+        lle_nwa=2u lle_nwb=2u lle_nwn=192n lle_nws=192n lle_ctne=0 \
+        lle_ctnw=0 lle_ctse=0 lle_ctsw=0 lle_sctne=0 lle_sctnw=0 \
+        lle_sctse=0 lle_sctsw=0 dtemp=0 l_shape=0 l_shape_s=0 nsig_dop1=0 \
+        nsig_dop2=0 nsig_dibl=0 nsig_pc=0 nsig_rx=0 fc_index=0 fc_sigma=3
+    M0 (M28_G in_m net25 gnd) lvtnfet_b_s_pcell_1 m=60 l=16n nfin=7 nf=1 \
+        par=(60) par_nf=(60)*(1) pdevdops=1 pdevlgeos=1 pdevwgeos=1 \
+        psw_acv_sign=1 plnest=1 pldist=1 plorient=0 cpp=84n fpitch=48n \
+        xpos=-99 ypos=-99 ptwell=0 sca=0 scb=0 scc=0 pre_layout_local=-1 \
+        ngcon=1 p_vta=0 p_la=0 u0mult_fet=1 lle_rxrxa=78n lle_rxrxb=78n \
+        lle_rxrxn=192n lle_rxrxs=192n lle_pcrxn=55n lle_pcrxs=55n \
+        lle_nwa=2u lle_nwb=2u lle_nwn=192n lle_nws=192n lle_ctne=0 \
+        lle_ctnw=0 lle_ctse=0 lle_ctsw=0 lle_sctne=0 lle_sctnw=0 \
+        lle_sctse=0 lle_sctsw=0 dtemp=0 l_shape=0 l_shape_s=0 nsig_dop1=0 \
+        nsig_dop2=0 nsig_dibl=0 nsig_pc=0 nsig_rx=0 fc_index=0 fc_sigma=3
+ends bias_amp
+// End of subcircuit definition.
+
+// Library name: Two_Stage_OpAmp
+// Cell name: bias_amp_AC
+// View name: schematic
+// Inherited view list: spectre cmos_sch cmos.sch schematic veriloga ahdl
+// pspice dspf
+C2 (OUTP 0) capacitor c=cload
+C0 (OUTM 0) capacitor c=cload
+R1 (OUTP 0) resistor r=rload
+R0 (OUTM 0) resistor r=rload
+I17 (netAVDD net_016) isource dc=50u type=dc
+I0 (netAVDD net_016 netAVDD netAVDD 0 net_022 net011 OUTM OUTP) bias_amp
+V1 (netAVDD 0) vsource dc=vdd mag=0 type=dc
+V44 (net_031 0) vsource dc=vdd/2 type=dc
+V4 (net_022 net_031) vsource dc=0 mag=-500m type=dc
+V0 (net011 net_031) vsource dc=0 mag=500m type=dc
+simulatorOptions options psfversion="1.1.0" reltol=1e-3 vabstol=1e-6 \
+    iabstol=1e-12 temp=110.0 tnom=27 scalem=1.0 scale=1.0 gmin=1e-12 \
+    rforce=1 maxnotes=5 maxwarns=5 digits=5 cols=80 pivrel=1e-3 \
+    sensfile="../psf/sens.output" checklimitdest=psf skipinvalidalter=yes 
+dcOp dc write="spectre.dc" maxiters=150 maxsteps=10000 annotate=status
+dcOpInfo info what=oppoint where=rawfile
+ac ac start=1 stop=10G dec=10 annotate=status 
+designParamVals info what=parameters where=rawfile
+primitives info what=primitives where=rawfile
+subckts info what=subckts where=rawfile
+save V1:p OUTM 
+saveOptions options save=all pwr=all currents=all useprobes=yes \
+    saveahdlvars=selected
