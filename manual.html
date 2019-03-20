@@ -1,0 +1,197 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Manual &#8212; degem  documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="API" href="API.html" />
+    <link rel="prev" title="What is DEGEM?" href="whats_degem.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="manual">
+<h1>Manual<a class="headerlink" href="#manual" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
+<p>Before running the tool, set the following environment variable to the path to the code repository of POSH:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>setenv DEGEM_ROOT <span class="s1">&#39;&lt;path to DEGEM source code&gt;&#39;</span>
+</pre></div>
+</div>
+<p>A correct <code class="docutils literal notranslate"><span class="pre">$DEGEM_ROOT</span></code> path should have a bunch of <code class="docutils literal notranslate"><span class="pre">degem_*.tcl</span></code> files in it.</p>
+</div>
+<div class="section" id="supported-formats">
+<h2>Supported Formats<a class="headerlink" href="#supported-formats" title="Permalink to this headline">¶</a></h2>
+<p>DEGEM supports the official SPICE netlist specifications. It also supports meta information provided by the CDL format.
+Since DEGEM does not simulate circuits internally, but rather relies on external simulators (e.g. HSPICE), it avoids the low-level details and only populates the internal database with structural information.
+Its interest in technology models is limited to identifying types of circuit components, while parameters, equations and bins are left for the characterizing simulator to read directly.</p>
+<p>At this point, there is no supprt for other commercial formats, such as Spectre.</p>
+</div>
+<div class="section" id="switches">
+<h2>Switches<a class="headerlink" href="#switches" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">degem</span></code> executable can be used with the following options, listed in descening priority:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">-f</span> <span class="pre">-file</span> <span class="pre">-files</span></code>           SPICE netlists to be loaded</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-c</span> <span class="pre">-cell</span></code>                  Specifies the top-level cell to be analyzed. Default: all instances at the top level.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-S</span></code>                        Specify a Tcl script to run after initial files are loaded</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-v</span> <span class="pre">-verbose</span></code>               Print debug information</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-s</span> <span class="pre">-session</span></code>               Load and save project information to a named session</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-m</span> <span class="pre">-model</span></code>                 Cache models in a model file and use it in future runs, instead of parsing .LIB libraries</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-h</span> <span class="pre">-help</span></code>                  Display this help and exit</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-l</span> <span class="pre">-log</span></code>                   Generate a plain log file, in parallel to XTERM color stdout</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-gnd</span></code>                      Assign a gnd role to a top-level net. This command supports a single-quoted list of glob patterns. e.g. <code class="docutils literal notranslate"><span class="pre">-vdd</span> <span class="pre">'VSS*</span> <span class="pre">VM_*'</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-vdd</span></code>                      Assign a vdd role to a top-level net. This command supports a single-quoted list of glob patterns. e.g. <code class="docutils literal notranslate"><span class="pre">-vdd</span> <span class="pre">'VDD*</span> <span class="pre">VP_*'</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-ct</span> <span class="pre">-compile_topology</span></code>     Compile the topology library.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-i</span></code>                        Start an interactive dialog</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-x</span> <span class="pre">-reset</span> <span class="pre">-init</span> <span class="pre">-start</span></code>    Specify a Tcl command to run after initial files are loaded</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-w</span> <span class="pre">-web</span></code>                   Use the tool via web GUI</p></li>
+</ul>
+</div>
+<div class="section" id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
+<p>In addition to command line switches, the tool supports configuration files. Configurations can be sourced in more than one way:</p>
+<ol class="arabic simple">
+<li><p>A <code class="docutils literal notranslate"><span class="pre">ckt.cfg</span></code> file in the same directory as the loaded SPICE netlist</p></li>
+<li><p>A <code class="docutils literal notranslate"><span class="pre">CKT.cfg</span></code> file in the same directory, <code class="docutils literal notranslate"><span class="pre">CKT</span></code> is the name of the top-level circuit.</p></li>
+<li><p>Any script provided in the <code class="docutils literal notranslate"><span class="pre">-S</span></code> option</p></li>
+</ol>
+<p>The configuration command is <code class="docutils literal notranslate"><span class="pre">CFG</span></code>. It accepts as first argument a name of a parameter, followed by a value or values.
+The following configuration parameters are as following:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">CFG</span> <span class="pre">power</span> <span class="pre">pattern1</span> <span class="pre">..</span> <span class="pre">patternN</span></code> - specify a list of glob-style patterns to be matched with <code class="docutils literal notranslate"><span class="pre">CKT</span></code> nets. All matches will be assigned a <code class="docutils literal notranslate"><span class="pre">sup1</span></code> power connection role in the circuit. This configuration is equivalent to the -vdd switch.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CFG</span> <span class="pre">ground</span> <span class="pre">pattern1</span> <span class="pre">..</span> <span class="pre">patternN</span></code> - specify a list of glob-style patterns to be matched with <code class="docutils literal notranslate"><span class="pre">CKT</span></code> nets. All matches will be assigned a <code class="docutils literal notranslate"><span class="pre">sup0</span></code> power connection role in the circuit. This configuration is equivalent to the -gnd switch.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CFG</span> <span class="pre">rule</span> <span class="pre">parameter</span> <span class="pre">[on|off]</span></code> - turn an analysis rule on or off. To see a full list of rules used by the tool, use the <code class="docutils literal notranslate"><span class="pre">-h</span> <span class="pre">rules</span></code> switch.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CFG</span> <span class="pre">topo_subst</span> <span class="pre">subckt</span> <span class="pre">component</span></code> - bypass the SPICE <code class="docutils literal notranslate"><span class="pre">.model</span></code> constructs by assigning a topological substitute component toa subckt, e.g. <code class="docutils literal notranslate"><span class="pre">CFG</span> <span class="pre">topo_subst</span> <span class="pre">resnet</span> <span class="pre">r</span></code> makes the topological engine treat resnet’s as resistors.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CFG</span> <span class="pre">global</span> <span class="pre">nets1</span> <span class="pre">..</span> <span class="pre">netN</span></code> - add global nets definitions to the <code class="docutils literal notranslate"><span class="pre">.global</span></code> SPICE cards.</p></li>
+</ul>
+</div>
+<div class="section" id="stand-alone-degem-scripts">
+<h2>Stand-Alone DEGEM Scripts<a class="headerlink" href="#stand-alone-degem-scripts" title="Permalink to this headline">¶</a></h2>
+<p>A “shabang” script can be written using the DEGEM repository, by employing the <code class="docutils literal notranslate"><span class="pre">-S</span></code> switch.
+At the very first line in the file, copy/paste the following:</p>
+<p><code class="docutils literal notranslate"><span class="pre">#\</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">exec</span> <span class="pre">$DEGEM_ROOT/degem</span> <span class="pre">-S</span> <span class="pre">$0</span></code></p>
+<p>The line can be added with all the other switches supported by DEGEM.
+After that, use the Tcl API to write a DEGEM-based script.</p>
+<p>See the reference script: <code class="docutils literal notranslate"><span class="pre">$DEGEM/regression.tcl</span></code>.
+This script performs all the common stages of processing a circuit from SPICE to model.
+The script uses some I/O utilities to generate summary tables and HTML formatted output.</p>
+</div>
+<div class="section" id="example-run">
+<h2>Example Run<a class="headerlink" href="#example-run" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">$DEGEM_ROOT/degem</span> <span class="pre">-c</span> <span class="pre">TOP</span> <span class="pre">-f</span> <span class="pre">$DEGEM_ROOT/circuits/Brown/TempSense/tsensor.sp</span> <span class="pre">-S</span> <span class="pre">$DEGEM_ROOT/regression.tcl</span> <span class="pre">-vdd</span> <span class="pre">'vdd*'</span> <span class="pre">-gnd</span> <span class="pre">'vss</span> <span class="pre">gnd'</span></code></p>
+<blockquote>
+<div></div></blockquote>
+<img alt="_images/regression_output_table.jpg" src="_images/regression_output_table.jpg" />
+<p>The example above shows a small design that has both instantiated sub-circuits and loose transistors.
+The transistors in the top level are grouped into <code class="docutils literal notranslate"><span class="pre">_ccb10</span></code>, which gets recognised automatically as a current-starved inverter circuit, which is part of the oscillators class (<code class="docutils literal notranslate"><span class="pre">osc</span></code>).
+The analog/digital breakdown of the transistors is shown in absolute numbers, analog percentage and graphic color bar. The latter is colored per this project convention of orange for analog and green for digital.</p>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">degem</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="whats_degem.html">What is DEGEM?</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Manual</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#setup">Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#supported-formats">Supported Formats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#switches">Switches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configuration">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#stand-alone-degem-scripts">Stand-Alone DEGEM Scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#example-run">Example Run</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="API.html">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="library.html">Topology library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="test_regression.html">Test Bench</a></li>
+<li class="toctree-l1"><a class="reference internal" href="internal_flow.html">Flow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="algorithms.html">Algorithms</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="whats_degem.html" title="previous chapter">What is DEGEM?</a></li>
+      <li>Next: <a href="API.html" title="next chapter">API</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Yishai Statter.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.0.0+</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/manual.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
