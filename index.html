@@ -1,1 +1,191 @@
-/u/yishai/public_html/degem_doc/index.html
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Welcome to DEGEM’s Documentation! &#8212; degem  documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="What is DEGEM?" href="whats_degem.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="welcome-to-degem-s-documentation">
+<h1>Welcome to DEGEM’s Documentation!<a class="headerlink" href="#welcome-to-degem-s-documentation" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>This documentation is not final and is subject to change without further notice.</p></li>
+<li><p>Not all the described features have actually been implemented.</p></li>
+<li><p>There is absolutely no warranty regarding completeness and implementation correctness of the described system and its parts.</p></li>
+<li><p>Some elements of the provided images may be borrowed from the internet.</p></li>
+</ul>
+</div>
+<p>DEGEM is a tool for generating analog models in SystemVerilog RNM.</p>
+<p>DEGEM Is a fully-automated, yet interactive, design environment that attmpts to recognize a given circuit’s structure and functionality and calculate a characterization flow towards a behavioral model.</p>
+</div>
+<div class="section" id="contents">
+<h1>Contents<a class="headerlink" href="#contents" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="whats_degem.html">What is DEGEM?</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="whats_degem.html#challenges-in-automating-ams-model-generators">Challenges in Automating AMS Model Generators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whats_degem.html#tool-development-architectural-choices">Tool Development Architectural Choices</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="manual.html">Manual</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="manual.html#setup">Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual.html#supported-formats">Supported Formats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual.html#switches">Switches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual.html#configuration">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual.html#stand-alone-degem-scripts">Stand-Alone DEGEM Scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual.html#example-run">Example Run</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="API.html">API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="API.html#data-model">Data Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="API.html#type-confirmation-api">Type Confirmation API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="API.html#flow-api">Flow API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="API.html#saving-results">Saving Results</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="library.html">Topology library</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="library.html#language">Language</a></li>
+<li class="toctree-l2"><a class="reference internal" href="library.html#adding-a-design-cell-to-the-library">Adding a Design Cell to the Library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="library.html#re-hashing-the-topology-library">re-Hashing the Topology Library</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="test_regression.html">Test Bench</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="circuits:SG:afe:rx_afe_amps_old.html">rx_afe_amps_old</a></li>
+<li class="toctree-l2"><a class="reference internal" href="circuits:SG:pll:TOP.html">TOP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="circuits:SG:bandgap:sup_por_bandgap_old.html">sup_por_bandgap_old</a></li>
+<li class="toctree-l2"><a class="reference internal" href="circuits:Orora:orora_amp_with_power_down:TOP.html">TOP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="circuits:SG:vreg_topo:tx_vreg_ssf__.html">tx_vreg_ssf__</a></li>
+<li class="toctree-l2"><a class="reference internal" href="circuits:CDS:opamp:bias_amp.html">bias_amp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="circuits:Orora:orora_chargepump:chargepump.html">chargepump</a></li>
+<li class="toctree-l2"><a class="reference internal" href="circuits:USC:DAC:adc12b.html">adc12b</a></li>
+<li class="toctree-l2"><a class="reference internal" href="circuits:SG:ldo:ldo_10ma.html">ldo_10ma</a></li>
+<li class="toctree-l2"><a class="reference internal" href="circuits:ACW:pll:acwpll.html">acwpll</a></li>
+<li class="toctree-l2"><a class="reference internal" href="circuits:Brown:TempSense:TOP.html">TOP</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="internal_flow.html">Flow</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="internal_flow.html#circuit-recognition">Circuit Recognition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="internal_flow.html#characterization">Characterization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="internal_flow.html#model-generation">Model Generation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="algorithms.html">Algorithms</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="algorithms.html#topology-conditioning">Topology Conditioning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="algorithms.html#group-channel-connected-devices">Group Channel Connected Devices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="algorithms.html#cell-recognition">Cell Recognition</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="#">degem</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="whats_degem.html">What is DEGEM?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manual.html">Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="API.html">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="library.html">Topology library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="test_regression.html">Test Bench</a></li>
+<li class="toctree-l1"><a class="reference internal" href="internal_flow.html">Flow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="algorithms.html">Algorithms</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+      <li>Next: <a href="whats_degem.html" title="next chapter">What is DEGEM?</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Yishai Statter.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.0.0+</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
