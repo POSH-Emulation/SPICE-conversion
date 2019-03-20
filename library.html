@@ -1,0 +1,164 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Topology library &#8212; degem  documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Test Bench" href="test_regression.html" />
+    <link rel="prev" title="API" href="API.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="topology-library">
+<h1>Topology library<a class="headerlink" href="#topology-library" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="language">
+<h2>Language<a class="headerlink" href="#language" title="Permalink to this headline">¶</a></h2>
+<p>The topology library is a set of SPICE-like sub-circuits that are kept as a reference to known cells and their functions.
+See the cells at <code class="docutils literal notranslate"><span class="pre">$DEGEM_ROOT/topologies/*.sp</span></code>
+The format of the netlists is based on SPICE, with the following super-set features:</p>
+<ul class="simple">
+<li><p>A circuit name can be repeated, provided it contains the pound symbol (<code class="docutils literal notranslate"><span class="pre">#</span></code>), which gets internally substituted with a running index. e.g. <code class="docutils literal notranslate"><span class="pre">.subckt</span> <span class="pre">amplifier#</span> <span class="pre">in</span> <span class="pre">out</span> <span class="pre">vdd</span> <span class="pre">gnd</span></code></p></li>
+<li><p>An instance name can also be repeated with the pound symbol, provided they keep the SPICE card convention. e.g. <code class="docutils literal notranslate"><span class="pre">m#</span> <span class="pre">drain</span> <span class="pre">gate</span> <span class="pre">gnd</span> <span class="pre">gnd</span> <span class="pre">nmos</span></code></p></li>
+<li><dl class="simple">
+<dt>The names used in the circuit have meaning:</dt><dd><ul>
+<li><p>A library cell’s name, up until a suffix number (or pound) gives the matched cell its function. e.g. a design cell <code class="docutils literal notranslate"><span class="pre">amp_out</span></code> is matched to <code class="docutils literal notranslate"><span class="pre">amp_stage#</span></code>, which implies to the tool that it is a single input amplifier.</p></li>
+<li><p>Interface nets can only be named in the following order: <code class="docutils literal notranslate"><span class="pre">(analog|digital|bias|ctrl|osc)_(in|out)\N+</span></code> .  Net names do not support the auto-numbered pound notation.</p></li>
+<li><p>Transistors are listed with technology-neutral types: <code class="docutils literal notranslate"><span class="pre">nmos</span></code>, <code class="docutils literal notranslate"><span class="pre">pmos</span></code>, <code class="docutils literal notranslate"><span class="pre">npn</span></code> and <code class="docutils literal notranslate"><span class="pre">pnp</span></code>.</p></li>
+<li><p>No values are assigned to transistor parameters or component sizes.</p></li>
+<li><p>Supply nets must be named <code class="docutils literal notranslate"><span class="pre">vdd</span></code> and <code class="docutils literal notranslate"><span class="pre">gnd</span></code>.</p></li>
+<li><p>Internal nets’ names have no restrictions.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>A cell can be autoamtically P/N mirrored to include both cell and its reflection in the library by adding a pragma comment: <code class="docutils literal notranslate"><span class="pre">*&gt;</span> <span class="pre">npsym</span></code> . Since mirroring re-enters a cell into the library, it must be named using the pound notation.</p></li>
+</ul>
+<img alt="_images/library_cell.jpg" src="_images/library_cell.jpg" />
+</div>
+<div class="section" id="adding-a-design-cell-to-the-library">
+<h2>Adding a Design Cell to the Library<a class="headerlink" href="#adding-a-design-cell-to-the-library" title="Permalink to this headline">¶</a></h2>
+<p>Once design sub-circuit was identified as a new type of cell, it can be added to the library be recognized automatically in the future.
+Use the following steps to prepare a library cell:</p>
+<ol class="arabic simple">
+<li><p>Copy the <code class="docutils literal notranslate"><span class="pre">.subckt</span> <span class="pre">...</span> <span class="pre">.ends</span></code> block into one of the appropriate files in the library or create a new one.</p></li>
+<li><p>Rename the sub-circuit according to its function.</p></li>
+<li><p>Identify and search/replace the interface nets’ names to reflect their function and directionality.</p></li>
+<li><p>Identify and search/replace supplies with <code class="docutils literal notranslate"><span class="pre">vdd</span></code> and <code class="docutils literal notranslate"><span class="pre">gnd</span></code></p></li>
+<li><p>Replace all transistor types with <code class="docutils literal notranslate"><span class="pre">nmos</span></code>, <code class="docutils literal notranslate"><span class="pre">pmos</span></code>, <code class="docutils literal notranslate"><span class="pre">npn</span></code> and <code class="docutils literal notranslate"><span class="pre">pnp</span></code>.</p></li>
+<li><p>Remove all parameters assignments</p></li>
+<li><p>Delete dummy transistors (source-drain short, source-gate short etc.)</p></li>
+</ol>
+</div>
+<div class="section" id="re-hashing-the-topology-library">
+<h2>re-Hashing the Topology Library<a class="headerlink" href="#re-hashing-the-topology-library" title="Permalink to this headline">¶</a></h2>
+<p>DEGEM’s ability to match design sub-circuits with library cells depends on it having an up-to-date table of canonical labels.
+Once cells were added to the library, they must be compiled so following DEGEM runs can match to them.</p>
+<p>To re-compile the library, run:
+<code class="docutils literal notranslate"><span class="pre">degem</span> <span class="pre">-ct</span> <span class="pre">&amp;</span></code></p>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">degem</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="whats_degem.html">What is DEGEM?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manual.html">Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="API.html">API</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Topology library</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#language">Language</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#adding-a-design-cell-to-the-library">Adding a Design Cell to the Library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#re-hashing-the-topology-library">re-Hashing the Topology Library</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="test_regression.html">Test Bench</a></li>
+<li class="toctree-l1"><a class="reference internal" href="internal_flow.html">Flow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="algorithms.html">Algorithms</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="API.html" title="previous chapter">API</a></li>
+      <li>Next: <a href="test_regression.html" title="next chapter">Test Bench</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Yishai Statter.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.0.0+</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/library.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
