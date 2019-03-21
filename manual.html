@@ -105,7 +105,7 @@ The script uses some I/O utilities to generate summary tables and HTML formatted
 <p><code class="docutils literal notranslate"><span class="pre">$DEGEM_ROOT/degem</span> <span class="pre">-c</span> <span class="pre">TOP</span> <span class="pre">-f</span> <span class="pre">$DEGEM_ROOT/circuits/Brown/TempSense/tsensor.sp</span> <span class="pre">-S</span> <span class="pre">$DEGEM_ROOT/regression.tcl</span> <span class="pre">-vdd</span> <span class="pre">'vdd*'</span> <span class="pre">-gnd</span> <span class="pre">'vss</span> <span class="pre">gnd'</span></code></p>
 <blockquote>
 <div></div></blockquote>
-<img alt="_images/regression_output_table.jpg" src="_images/regression_output_table.jpg" />
+<img alt="regression_output_table.jpg" src="regression_output_table.jpg" />
 <p>The example above shows a small design that has both instantiated sub-circuits and loose transistors.
 The transistors in the top level are grouped into <code class="docutils literal notranslate"><span class="pre">_ccb10</span></code>, which gets recognised automatically as a current-starved inverter circuit, which is part of the oscillators class (<code class="docutils literal notranslate"><span class="pre">osc</span></code>).
 The analog/digital breakdown of the transistors is shown in absolute numbers, analog percentage and graphic color bar. The latter is colored per this project convention of orange for analog and green for digital.</p>
