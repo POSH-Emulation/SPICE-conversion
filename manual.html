@@ -5,20 +5,20 @@
   <head>
     <meta charset="utf-8" />
     <title>Manual &#8212; degem  documentation</title>
-    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/language_data.js"></script>
+    <link rel="stylesheet" href="alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="documentation_options.js"></script>
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="underscore.js"></script>
+    <script type="text/javascript" src="doctools.js"></script>
+    <script type="text/javascript" src="language_data.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="API" href="API.html" />
     <link rel="prev" title="What is DEGEM?" href="whats_degem.html" />
    
-  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  <link rel="stylesheet" href="custom.css" type="text/css" />
   
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
@@ -34,9 +34,9 @@
           <div class="body" role="main">
             
   <div class="section" id="manual">
-<h1>Manual<a class="headerlink" href="#manual" title="Permalink to this headline">¶</a></h1>
+<h1>Manual<a class="headerlink" href="#manual" title="Permalink to this headline"></a></h1>
 <div class="section" id="setup">
-<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
+<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline"></a></h2>
 <p>Before running the tool, set the following environment variable to the path to the code repository of POSH:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>setenv DEGEM_ROOT <span class="s1">&#39;&lt;path to DEGEM source code&gt;&#39;</span>
 </pre></div>
@@ -44,14 +44,14 @@
 <p>A correct <code class="docutils literal notranslate"><span class="pre">$DEGEM_ROOT</span></code> path should have a bunch of <code class="docutils literal notranslate"><span class="pre">degem_*.tcl</span></code> files in it.</p>
 </div>
 <div class="section" id="supported-formats">
-<h2>Supported Formats<a class="headerlink" href="#supported-formats" title="Permalink to this headline">¶</a></h2>
+<h2>Supported Formats<a class="headerlink" href="#supported-formats" title="Permalink to this headline"></a></h2>
 <p>DEGEM supports the official SPICE netlist specifications. It also supports meta information provided by the CDL format.
 Since DEGEM does not simulate circuits internally, but rather relies on external simulators (e.g. HSPICE), it avoids the low-level details and only populates the internal database with structural information.
 Its interest in technology models is limited to identifying types of circuit components, while parameters, equations and bins are left for the characterizing simulator to read directly.</p>
 <p>At this point, there is no supprt for other commercial formats, such as Spectre.</p>
 </div>
 <div class="section" id="switches">
-<h2>Switches<a class="headerlink" href="#switches" title="Permalink to this headline">¶</a></h2>
+<h2>Switches<a class="headerlink" href="#switches" title="Permalink to this headline"></a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">degem</span></code> executable can be used with the following options, listed in descening priority:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">-f</span> <span class="pre">-file</span> <span class="pre">-files</span></code>           SPICE netlists to be loaded</p></li>
@@ -71,7 +71,7 @@ Its interest in technology models is limited to identifying types of circuit com
 </ul>
 </div>
 <div class="section" id="configuration">
-<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
+<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline"></a></h2>
 <p>In addition to command line switches, the tool supports configuration files. Configurations can be sourced in more than one way:</p>
 <ol class="arabic simple">
 <li><p>A <code class="docutils literal notranslate"><span class="pre">ckt.cfg</span></code> file in the same directory as the loaded SPICE netlist</p></li>
@@ -89,7 +89,7 @@ The following configuration parameters are as following:</p>
 </ul>
 </div>
 <div class="section" id="stand-alone-degem-scripts">
-<h2>Stand-Alone DEGEM Scripts<a class="headerlink" href="#stand-alone-degem-scripts" title="Permalink to this headline">¶</a></h2>
+<h2>Stand-Alone DEGEM Scripts<a class="headerlink" href="#stand-alone-degem-scripts" title="Permalink to this headline"></a></h2>
 <p>A “shabang” script can be written using the DEGEM repository, by employing the <code class="docutils literal notranslate"><span class="pre">-S</span></code> switch.
 At the very first line in the file, copy/paste the following:</p>
 <p><code class="docutils literal notranslate"><span class="pre">#\</span></code></p>
@@ -101,7 +101,7 @@ This script performs all the common stages of processing a circuit from SPICE to
 The script uses some I/O utilities to generate summary tables and HTML formatted output.</p>
 </div>
 <div class="section" id="example-run">
-<h2>Example Run<a class="headerlink" href="#example-run" title="Permalink to this headline">¶</a></h2>
+<h2>Example Run<a class="headerlink" href="#example-run" title="Permalink to this headline"></a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">$DEGEM_ROOT/degem</span> <span class="pre">-c</span> <span class="pre">TOP</span> <span class="pre">-f</span> <span class="pre">$DEGEM_ROOT/circuits/Brown/TempSense/tsensor.sp</span> <span class="pre">-S</span> <span class="pre">$DEGEM_ROOT/regression.tcl</span> <span class="pre">-vdd</span> <span class="pre">'vdd*'</span> <span class="pre">-gnd</span> <span class="pre">'vss</span> <span class="pre">gnd'</span></code></p>
 <blockquote>
 <div></div></blockquote>

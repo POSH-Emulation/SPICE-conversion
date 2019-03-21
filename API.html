@@ -5,20 +5,20 @@
   <head>
     <meta charset="utf-8" />
     <title>API &#8212; degem  documentation</title>
-    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/language_data.js"></script>
+    <link rel="stylesheet" href="alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="documentation_options.js"></script>
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="underscore.js"></script>
+    <script type="text/javascript" src="doctools.js"></script>
+    <script type="text/javascript" src="language_data.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Topology library" href="library.html" />
     <link rel="prev" title="Manual" href="manual.html" />
    
-  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  <link rel="stylesheet" href="custom.css" type="text/css" />
   
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
@@ -34,9 +34,9 @@
           <div class="body" role="main">
             
   <div class="section" id="api">
-<h1>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h1>
+<h1>API<a class="headerlink" href="#api" title="Permalink to this headline"></a></h1>
 <div class="section" id="data-model">
-<h2>Data Model<a class="headerlink" href="#data-model" title="Permalink to this headline">¶</a></h2>
+<h2>Data Model<a class="headerlink" href="#data-model" title="Permalink to this headline"></a></h2>
 <p>Most database access commands are of the following format: <code class="docutils literal notranslate"><span class="pre">nl_(cell|inst|net|pin|...)_(get|set|exists|add|unset|get_all)_(cell|net|pin|...)</span></code>.
 The main netlist objects are:</p>
 <blockquote>
@@ -57,7 +57,7 @@ The main netlist objects are:</p>
 </dl>
 </div>
 <div class="section" id="type-confirmation-api">
-<h2>Type Confirmation API<a class="headerlink" href="#type-confirmation-api" title="Permalink to this headline">¶</a></h2>
+<h2>Type Confirmation API<a class="headerlink" href="#type-confirmation-api" title="Permalink to this headline"></a></h2>
 <p>Common conditions rely on checking that an instance is of certain type class and a successful query of its connectivity.
 A narrow set of API does all that in a single command:</p>
 <blockquote>
@@ -78,7 +78,7 @@ A narrow set of API does all that in a single command:</p>
 </dl>
 </div>
 <div class="section" id="flow-api">
-<h2>Flow API<a class="headerlink" href="#flow-api" title="Permalink to this headline">¶</a></h2>
+<h2>Flow API<a class="headerlink" href="#flow-api" title="Permalink to this headline"></a></h2>
 <dl class="simple">
 <dt>The main tool opration API are:</dt><dd><ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">load_spice</span> <span class="pre">&lt;SPICE</span> <span class="pre">file&gt;</span></code> - load and parse the netlist.</p></li>
@@ -91,7 +91,7 @@ A narrow set of API does all that in a single command:</p>
 </dl>
 </div>
 <div class="section" id="saving-results">
-<h2>Saving Results<a class="headerlink" href="#saving-results" title="Permalink to this headline">¶</a></h2>
+<h2>Saving Results<a class="headerlink" href="#saving-results" title="Permalink to this headline"></a></h2>
 <blockquote>
 <div><ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">save_tcl</span> <span class="pre">&lt;file</span> <span class="pre">name&gt;</span></code> - save all the data model in a Tcl format. Loading the data can be done with a simple <code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">&lt;file</span> <span class="pre">name&gt;</span></code>.</p></li>

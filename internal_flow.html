@@ -5,20 +5,20 @@
   <head>
     <meta charset="utf-8" />
     <title>Flow &#8212; degem  documentation</title>
-    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/language_data.js"></script>
+    <link rel="stylesheet" href="alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="documentation_options.js"></script>
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="underscore.js"></script>
+    <script type="text/javascript" src="doctools.js"></script>
+    <script type="text/javascript" src="language_data.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Algorithms" href="algorithms.html" />
     <link rel="prev" title="TOP" href="circuits:Brown:TempSense:TOP.html" />
    
-  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  <link rel="stylesheet" href="custom.css" type="text/css" />
   
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
@@ -34,7 +34,7 @@
           <div class="body" role="main">
             
   <div class="section" id="flow">
-<h1>Flow<a class="headerlink" href="#flow" title="Permalink to this headline">¶</a></h1>
+<h1>Flow<a class="headerlink" href="#flow" title="Permalink to this headline"></a></h1>
 <p>DEGEM’s main flow is automatic, linear and design-independent.
 It is comprised of 3 main stage:</p>
 <ol class="arabic simple">
@@ -44,7 +44,7 @@ It is comprised of 3 main stage:</p>
 </ol>
 <p>The tool relies on two other logistical flows, which provide cached libraries and reference data that is infrequently updated.</p>
 <div class="section" id="circuit-recognition">
-<h2>Circuit Recognition<a class="headerlink" href="#circuit-recognition" title="Permalink to this headline">¶</a></h2>
+<h2>Circuit Recognition<a class="headerlink" href="#circuit-recognition" title="Permalink to this headline"></a></h2>
 <p>Circuit recognition is the stage where the tool analyzes the structure of the circuit and creates an abstract representation of the internal data flow.
 The stage breaks down to the following sub-stages:</p>
 <ol class="arabic simple">
@@ -57,7 +57,7 @@ The stage breaks down to the following sub-stages:</p>
 <li><p>Merging - constructing a data flow graph.</p></li>
 </ol>
 <div class="section" id="flattening">
-<h3>Flattening<a class="headerlink" href="#flattening" title="Permalink to this headline">¶</a></h3>
+<h3>Flattening<a class="headerlink" href="#flattening" title="Permalink to this headline"></a></h3>
 <p>While default at the moment, this stage can be skipped or applied selectively to sub-circuits.
 Flattening the circuit achieves the following goals:</p>
 <ul class="simple">
@@ -73,7 +73,7 @@ Flattening the circuit achieves the following goals:</p>
 </ul>
 </div>
 <div class="section" id="conditioning">
-<h3>Conditioning<a class="headerlink" href="#conditioning" title="Permalink to this headline">¶</a></h3>
+<h3>Conditioning<a class="headerlink" href="#conditioning" title="Permalink to this headline"></a></h3>
 <p>In preparation for topology analysis, the tool must identify and deal with some structures that are corner-cases or complicate the algorithms:</p>
 <ul class="simple">
 <li><p>Parallel and serial components - while electrically significant, there is no topological meaning to having two FET channels (for instance) connected in series and sharing the same gate. Merging transistors and components to “super transistors” and “super components” respectively simplifies cell-level recognition later on.</p></li>
@@ -83,7 +83,7 @@ Flattening the circuit achieves the following goals:</p>
 </ul>
 </div>
 <div class="section" id="grouping">
-<h3>Grouping<a class="headerlink" href="#grouping" title="Permalink to this headline">¶</a></h3>
+<h3>Grouping<a class="headerlink" href="#grouping" title="Permalink to this headline"></a></h3>
 <p>The grouping algorithm finds clusters of transistors and connecting components that share current. Grouped transistors are connected by channels: sources and drains (for FET) or collectors and emitters (for BJT). A gate connection is ignored.
 There are two optional strategies to grouping together transistors into cells:</p>
 <ul class="simple">
@@ -111,7 +111,7 @@ There are two optional strategies to grouping together transistors into cells:</
 The grouping stage tries “King of the Hill” first and uses a size threshold to detect cells that should be more selectively grouped, using the “Picky Eater” approach.</p>
 </div>
 <div class="section" id="classifying">
-<h3>Classifying<a class="headerlink" href="#classifying" title="Permalink to this headline">¶</a></h3>
+<h3>Classifying<a class="headerlink" href="#classifying" title="Permalink to this headline"></a></h3>
 <p>Initially, cells are marked with interface directionality, according to the following rules:</p>
 <ul class="simple">
 <li><p>Inputs - pins that connect to transistor gates only, either directly or via resistors, are considered inputs.</p></li>
@@ -136,7 +136,7 @@ For instance, in CMOS cells there could be parallel N branches, which violated t
 Turning that rule off allows the tool to still classify those cells as digital, based on the other symptoms.</p>
 </div>
 <div class="section" id="extracting">
-<h3>Extracting<a class="headerlink" href="#extracting" title="Permalink to this headline">¶</a></h3>
+<h3>Extracting<a class="headerlink" href="#extracting" title="Permalink to this headline"></a></h3>
 <p>Dual functions separate the cases for each logic level on a net.
 The possible levels are:</p>
 <ol class="arabic simple">
@@ -160,7 +160,7 @@ This stage can find nodes that depend on themselves, which indicate data-retenti
 The resulting stack of equations has outputs and latch nodes on the left-hand side and inputs and latch nodes on the right-hand side.</p>
 </div>
 <div class="section" id="matching">
-<h3>Matching<a class="headerlink" href="#matching" title="Permalink to this headline">¶</a></h3>
+<h3>Matching<a class="headerlink" href="#matching" title="Permalink to this headline"></a></h3>
 <p>An analog cell that was not ruled trivial in the classification stage is identified by matching it to a cell from the library.</p>
 <p>Canonical Graph Labeling is the basis for cell matching.
 The method creates a canonical hash key for a cell and uses it to narrow down the search for a matching library cell.
@@ -196,7 +196,7 @@ This sets up the initial dependence arcs, which are the analog-circuit equivalen
 After the initial arcs are set by the recognised cells, nodes that connect to cells via loose components are also marked by arcs, until all relevant nodes are on arcs.</p>
 </div>
 <div class="section" id="merging">
-<h3>Merging<a class="headerlink" href="#merging" title="Permalink to this headline">¶</a></h3>
+<h3>Merging<a class="headerlink" href="#merging" title="Permalink to this headline"></a></h3>
 <p>Dependence arcs are extended to the rest of the design and merged to form full dependence paths.
 Unlike switching (timing) paths of Static Timing Analysis (STA), analog dependence paths are not classified in the edge to edge convention (e.g. rise-&gt;rise), but according to the following types:</p>
 <ul class="simple">
@@ -254,7 +254,7 @@ Unlike switching (timing) paths of Static Timing Analysis (STA), analog dependen
 </div>
 </div>
 <div class="section" id="characterization">
-<h2>Characterization<a class="headerlink" href="#characterization" title="Permalink to this headline">¶</a></h2>
+<h2>Characterization<a class="headerlink" href="#characterization" title="Permalink to this headline"></a></h2>
 <p>Once the design’s data flow is recognized, the model’s specific behavior and parameters are evaluated by simulating specific scenarios and post-processing the resulting vectors.
 This stage has three parts:</p>
 <ol class="arabic simple">
@@ -263,11 +263,11 @@ This stage has three parts:</p>
 <li><p>Post-processing</p></li>
 </ol>
 <div class="section" id="harness-compilation">
-<h3>Harness Compilation<a class="headerlink" href="#harness-compilation" title="Permalink to this headline">¶</a></h3>
+<h3>Harness Compilation<a class="headerlink" href="#harness-compilation" title="Permalink to this headline"></a></h3>
 </div>
 </div>
 <div class="section" id="model-generation">
-<h2>Model Generation<a class="headerlink" href="#model-generation" title="Permalink to this headline">¶</a></h2>
+<h2>Model Generation<a class="headerlink" href="#model-generation" title="Permalink to this headline"></a></h2>
 </div>
 </div>
 

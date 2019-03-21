@@ -5,20 +5,20 @@
   <head>
     <meta charset="utf-8" />
     <title>Topology library &#8212; degem  documentation</title>
-    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/language_data.js"></script>
+    <link rel="stylesheet" href="alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="documentation_options.js"></script>
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="underscore.js"></script>
+    <script type="text/javascript" src="doctools.js"></script>
+    <script type="text/javascript" src="language_data.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Test Bench" href="test_regression.html" />
     <link rel="prev" title="API" href="API.html" />
    
-  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  <link rel="stylesheet" href="custom.css" type="text/css" />
   
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
@@ -34,9 +34,9 @@
           <div class="body" role="main">
             
   <div class="section" id="topology-library">
-<h1>Topology library<a class="headerlink" href="#topology-library" title="Permalink to this headline">¶</a></h1>
+<h1>Topology library<a class="headerlink" href="#topology-library" title="Permalink to this headline"></a></h1>
 <div class="section" id="language">
-<h2>Language<a class="headerlink" href="#language" title="Permalink to this headline">¶</a></h2>
+<h2>Language<a class="headerlink" href="#language" title="Permalink to this headline"></a></h2>
 <p>The topology library is a set of SPICE-like sub-circuits that are kept as a reference to known cells and their functions.
 See the cells at <code class="docutils literal notranslate"><span class="pre">$DEGEM_ROOT/topologies/*.sp</span></code>
 The format of the netlists is based on SPICE, with the following super-set features:</p>
@@ -60,7 +60,7 @@ The format of the netlists is based on SPICE, with the following super-set featu
 <img alt="_images/library_cell.jpg" src="_images/library_cell.jpg" />
 </div>
 <div class="section" id="adding-a-design-cell-to-the-library">
-<h2>Adding a Design Cell to the Library<a class="headerlink" href="#adding-a-design-cell-to-the-library" title="Permalink to this headline">¶</a></h2>
+<h2>Adding a Design Cell to the Library<a class="headerlink" href="#adding-a-design-cell-to-the-library" title="Permalink to this headline"></a></h2>
 <p>Once design sub-circuit was identified as a new type of cell, it can be added to the library be recognized automatically in the future.
 Use the following steps to prepare a library cell:</p>
 <ol class="arabic simple">
@@ -74,7 +74,7 @@ Use the following steps to prepare a library cell:</p>
 </ol>
 </div>
 <div class="section" id="re-hashing-the-topology-library">
-<h2>re-Hashing the Topology Library<a class="headerlink" href="#re-hashing-the-topology-library" title="Permalink to this headline">¶</a></h2>
+<h2>re-Hashing the Topology Library<a class="headerlink" href="#re-hashing-the-topology-library" title="Permalink to this headline"></a></h2>
 <p>DEGEM’s ability to match design sub-circuits with library cells depends on it having an up-to-date table of canonical labels.
 Once cells were added to the library, they must be compiled so following DEGEM runs can match to them.</p>
 <p>To re-compile the library, run:
