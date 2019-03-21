@@ -5,20 +5,20 @@
   <head>
     <meta charset="utf-8" />
     <title>What is DEGEM? &#8212; degem  documentation</title>
-    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/language_data.js"></script>
+    <link rel="stylesheet" href="alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="documentation_options.js"></script>
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="underscore.js"></script>
+    <script type="text/javascript" src="doctools.js"></script>
+    <script type="text/javascript" src="language_data.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Manual" href="manual.html" />
     <link rel="prev" title="Welcome to DEGEM’s Documentation!" href="index.html" />
    
-  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  <link rel="stylesheet" href="custom.css" type="text/css" />
   
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
@@ -34,12 +34,12 @@
           <div class="body" role="main">
             
   <div class="section" id="what-is-degem">
-<h1>What is DEGEM?<a class="headerlink" href="#what-is-degem" title="Permalink to this headline">¶</a></h1>
+<h1>What is DEGEM?<a class="headerlink" href="#what-is-degem" title="Permalink to this headline"></a></h1>
 <p>The Design Environment for Generating Emulation Models is a DARPA-funded research project within the POSH program.
 The goal of the research is to put together an algorithm stack that produces a behavioral model for an Analog/Mixed Signal design that can be used in an FPGA emulator.
 The input design format is SPICE netlist and the output is expected to use SystemVerilog’s Real Number Modelling constructs.</p>
 <div class="section" id="challenges-in-automating-ams-model-generators">
-<h2>Challenges in Automating AMS Model Generators<a class="headerlink" href="#challenges-in-automating-ams-model-generators" title="Permalink to this headline">¶</a></h2>
+<h2>Challenges in Automating AMS Model Generators<a class="headerlink" href="#challenges-in-automating-ams-model-generators" title="Permalink to this headline"></a></h2>
 <p>Automated modelling procedures is a well researched topic that yielded both characterization flows and digital implementation technics.
 The added value of this project is putting together all the block-level modelling methods in the context of a system that contains a diversity of analog and digital sub-circuits.
 To be able to mix different types of circuits in a single modelling environment, the tool needs to have a combination two features: open and powerful configuration interface and a high level of automated circuit analysis capabilities.
@@ -50,7 +50,7 @@ Other aspects, while important in the context of analog design, should be ignore
 The challenge to DEGEM is to be able to model the right behavioral aspects and avoid the others. At the same time, it should present the user with an easy control of what part of the model are to be included in the final RNM output.</p>
 </div>
 <div class="section" id="tool-development-architectural-choices">
-<h2>Tool Development Architectural Choices<a class="headerlink" href="#tool-development-architectural-choices" title="Permalink to this headline">¶</a></h2>
+<h2>Tool Development Architectural Choices<a class="headerlink" href="#tool-development-architectural-choices" title="Permalink to this headline"></a></h2>
 <p>The tool is coded in a command line run script. The command line options are kept to minimal. Each session is saved in a Tcl and JSON hierarchical database to be quickly loaded by another process for continued processing.
 The tool is constructed to support a cloud-computing usage mode. It can be launched as a TCP server and its disk-saved database allows it to perform short, CGI launched, operations.
 A graphic user interface is developed in parallel to the tool itself, to be the front-end of the cloud usage mode.</p>
