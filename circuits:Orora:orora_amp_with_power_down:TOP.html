@@ -1,0 +1,271 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>TOP &#8212; degem  documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="tx_vreg_ssf__" href="circuits:SG:vreg_topo:tx_vreg_ssf__.html" />
+    <link rel="prev" title="sup_por_bandgap_old" href="circuits:SG:bandgap:sup_por_bandgap_old.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="top">
+<h1>TOP<a class="headerlink" href="#top" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="before-topological-analysis-mon-mar-18-14-58-35-edt-2019">
+<h2>Before Topological Analysis Mon Mar 18 14:58:35 EDT 2019<a class="headerlink" href="#before-topological-analysis-mon-mar-18-14-58-35-edt-2019" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-center">
+<colgroup>
+<col style="width: 3%" />
+<col style="width: 13%" />
+<col style="width: 15%" />
+<col style="width: 12%" />
+<col style="width: 9%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 13%" />
+<col style="width: 9%" />
+<col style="width: 10%" />
+<col style="width: 5%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>###</p></th>
+<th class="head"><p>cell</p></th>
+<th class="head"><p>topology</p></th>
+<th class="head"><p>inputs</p></th>
+<th class="head"><p>outputs</p></th>
+<th class="head"><p>#inst</p></th>
+<th class="head"><p>#pins</p></th>
+<th class="head"><p>sub-cells</p></th>
+<th class="head"><p>#analog</p></th>
+<th class="head"><p>#digital</p></th>
+<th class="head"><p>%</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>ampp_wpdown</p></td>
+<td><p>General analog</p></td>
+<td><p>en0 en1</p></td>
+<td><p>vout</p></td>
+<td><p>13</p></td>
+<td><p>7</p></td>
+<td><p>r fetp fetn</p></td>
+<td><p>11</p></td>
+<td><p>0</p></td>
+<td><p>100</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>TOP</p></td>
+<td><p>top level</p></td>
+<td></td>
+<td></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>ampp_wpdown</p></td>
+<td><p>11</p></td>
+<td><p>0</p></td>
+<td><p>100</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="after-topological-analysis-mon-mar-18-14-58-36-edt-2019">
+<h2>After Topological Analysis Mon Mar 18 14:58:36 EDT 2019<a class="headerlink" href="#after-topological-analysis-mon-mar-18-14-58-36-edt-2019" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-center">
+<colgroup>
+<col style="width: 3%" />
+<col style="width: 11%" />
+<col style="width: 14%" />
+<col style="width: 11%" />
+<col style="width: 8%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 20%" />
+<col style="width: 8%" />
+<col style="width: 9%" />
+<col style="width: 4%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>###</p></th>
+<th class="head"><p>cell</p></th>
+<th class="head"><p>topology</p></th>
+<th class="head"><p>inputs</p></th>
+<th class="head"><p>outputs</p></th>
+<th class="head"><p>#inst</p></th>
+<th class="head"><p>#pins</p></th>
+<th class="head"><p>sub-cells</p></th>
+<th class="head"><p>#analog</p></th>
+<th class="head"><p>#digital</p></th>
+<th class="head"><p>%</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>ampp_wpdown</p></td>
+<td><p>General analog</p></td>
+<td><p>en0 en1</p></td>
+<td><p>vout</p></td>
+<td><p>4</p></td>
+<td><p>7</p></td>
+<td><p>r _ccb13 _ccb9 _ccb11</p></td>
+<td><p>11</p></td>
+<td><p>0</p></td>
+<td><p>100</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>TOP</p></td>
+<td><p>top level</p></td>
+<td></td>
+<td></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>ampp_wpdown</p></td>
+<td><p>11</p></td>
+<td><p>0</p></td>
+<td><p>100</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>_ccb13</p></td>
+<td><p>diff_pair</p></td>
+<td><p>net085</p></td>
+<td><p>vout</p></td>
+<td><p>6</p></td>
+<td><p>7</p></td>
+<td><p>fetn fetp</p></td>
+<td><p>6</p></td>
+<td><p>0</p></td>
+<td><p>100</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>_ccb11</p></td>
+<td><p>bias</p></td>
+<td><p>en0</p></td>
+<td><p>ibias</p></td>
+<td><p>4</p></td>
+<td><p>4</p></td>
+<td><p>fetp r fetn</p></td>
+<td><p>3</p></td>
+<td><p>0</p></td>
+<td><p>100</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>_ccb9</p></td>
+<td><p>amp_stage</p></td>
+<td><p>ibias</p></td>
+<td><p>net085</p></td>
+<td><p>2</p></td>
+<td><p>4</p></td>
+<td><p>fetn fetp</p></td>
+<td><p>2</p></td>
+<td><p>0</p></td>
+<td><p>100</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">degem</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="whats_degem.html">What is DEGEM?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manual.html">Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="API.html">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="library.html">Topology library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="internal_flow.html">Flow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="algorithms.html">Algorithms</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="test_regression.html">Test Bench</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="test_regression.html#glossary">Glossary</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="test_regression.html">Test Bench</a><ul>
+      <li>Previous: <a href="circuits:SG:bandgap:sup_por_bandgap_old.html" title="previous chapter">sup_por_bandgap_old</a></li>
+      <li>Next: <a href="circuits:SG:vreg_topo:tx_vreg_ssf__.html" title="next chapter">tx_vreg_ssf__</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Yishai Statter.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.0.0+</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/circuits:Orora:orora_amp_with_power_down:TOP.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

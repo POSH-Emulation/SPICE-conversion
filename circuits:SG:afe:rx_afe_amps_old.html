@@ -1,0 +1,899 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>rx_afe_amps_old &#8212; degem  documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="TOP" href="circuits:SG:pll:TOP.html" />
+    <link rel="prev" title="Test Bench" href="test_regression.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="rx-afe-amps-old">
+<h1>rx_afe_amps_old<a class="headerlink" href="#rx-afe-amps-old" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="before-topological-analysis-tue-mar-19-13-12-52-edt-2019">
+<h2>Before Topological Analysis Tue Mar 19 13:12:52 EDT 2019<a class="headerlink" href="#before-topological-analysis-tue-mar-19-13-12-52-edt-2019" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-center">
+<colgroup>
+<col style="width: 2%" />
+<col style="width: 15%" />
+<col style="width: 14%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 24%" />
+<col style="width: 6%" />
+<col style="width: 7%" />
+<col style="width: 4%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>###</p></th>
+<th class="head"><p>cell</p></th>
+<th class="head"><p>topology</p></th>
+<th class="head"><p>inputs</p></th>
+<th class="head"><p>outputs</p></th>
+<th class="head"><p>#inst</p></th>
+<th class="head"><p>#pins</p></th>
+<th class="head"><p>sub-cells</p></th>
+<th class="head"><p>#analog</p></th>
+<th class="head"><p>#digital</p></th>
+<th class="head"><p>%</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>rx_afe_amps_old</p></td>
+<td></td>
+<td><p>bst__2</p></td>
+<td><p>atb_f_m</p></td>
+<td><p>8</p></td>
+<td><p>22</p></td>
+<td><p>rx_afe_amp_outoff rx_afe_pream</p></td>
+<td><p>243</p></td>
+<td><p>94</p></td>
+<td><p>72.1</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>rx_afe_preamp</p></td>
+<td></td>
+<td><p>bst__2</p></td>
+<td><p>fbmi fb</p></td>
+<td><p>269</p></td>
+<td><p>18</p></td>
+<td><p>rx_afe_preamp_req lvtnfet sctg</p></td>
+<td><p>50</p></td>
+<td><p>72</p></td>
+<td><p>40.9</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>rx_afe_preamp_req</p></td>
+<td><p>Boolean extraction</p></td>
+<td><p>s__2 <a href="#id1"><span class="problematic" id="id2">s_</span></a></p></td>
+<td><p>t1</p></td>
+<td><p>258</p></td>
+<td><p>7</p></td>
+<td><p>reopnpcres sc_na2x12_lvt sc_no</p></td>
+<td><p>0</p></td>
+<td><p>70</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>rx_afe_amp_outoff</p></td>
+<td></td>
+<td><p><a href="#id3"><span class="problematic" id="id4">en_atb_</span></a></p></td>
+<td><p>atb_s_m</p></td>
+<td><p>173</p></td>
+<td><p>16</p></td>
+<td><p>eglvtnfet reopnpcres eglvtpfet</p></td>
+<td><p>119</p></td>
+<td><p>8</p></td>
+<td><p>93.7</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>rx_afe_amp_inoff</p></td>
+<td></td>
+<td><p><a href="#id5"><span class="problematic" id="id6">en_atb_</span></a></p></td>
+<td><p>atb_s_m</p></td>
+<td><p>172</p></td>
+<td><p>14</p></td>
+<td><p>eglvtpfet phvcap_sig_sig_m1 st</p></td>
+<td><p>74</p></td>
+<td><p>6</p></td>
+<td><p>92.5</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>rx_afe_ac_couple</p></td>
+<td><p>Boolean extraction</p></td>
+<td><p>vcmfb v</p></td>
+<td><p>vac_m v</p></td>
+<td><p>50</p></td>
+<td><p>10</p></td>
+<td><p>ssp_esd_2nd_ndio ssp_esd_2nd_p</p></td>
+<td><p>0</p></td>
+<td><p>8</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td><p>sc_no3x6_lvt</p></td>
+<td><p>Boolean extraction</p></td>
+<td><p>a b c</p></td>
+<td><p>z</p></td>
+<td><p>9</p></td>
+<td><p>6</p></td>
+<td><p>lvtnfet lvtpfet</p></td>
+<td><p>0</p></td>
+<td><p>9</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>8</p></td>
+<td><p>sc_no2x12_lvt</p></td>
+<td><p>nor</p></td>
+<td><p>a b</p></td>
+<td><p>z</p></td>
+<td><p>5</p></td>
+<td><p>5</p></td>
+<td><p>lvtnfet lvtpfet</p></td>
+<td><p>0</p></td>
+<td><p>4</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>9</p></td>
+<td><p>sc_na2x12_lvt</p></td>
+<td><p>nand</p></td>
+<td><p>a b</p></td>
+<td><p>z</p></td>
+<td><p>8</p></td>
+<td><p>5</p></td>
+<td><p>lvtpfet lvtnfet</p></td>
+<td><p>0</p></td>
+<td><p>4</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>10</p></td>
+<td><p>sctg_inv2x</p></td>
+<td><p>inverter</p></td>
+<td><p>a</p></td>
+<td><p>z</p></td>
+<td><p>2</p></td>
+<td><p>4</p></td>
+<td><p>eglvtnfet eglvtpfet</p></td>
+<td><p>0</p></td>
+<td><p>2</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>11</p></td>
+<td><p>sctg_inv1x</p></td>
+<td><p>inverter</p></td>
+<td><p>a</p></td>
+<td><p>z</p></td>
+<td><p>2</p></td>
+<td><p>4</p></td>
+<td><p>eglvtnfet eglvtpfet</p></td>
+<td><p>0</p></td>
+<td><p>2</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>12</p></td>
+<td><p>sc_invx8_lvt</p></td>
+<td><p>inverter</p></td>
+<td><p>a</p></td>
+<td><p>z</p></td>
+<td><p>5</p></td>
+<td><p>4</p></td>
+<td><p>lvtpfet lvtnfet</p></td>
+<td><p>0</p></td>
+<td><p>2</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>13</p></td>
+<td><p>nhvcap_sig_gd_m1</p></td>
+<td><p>tiehi</p></td>
+<td></td>
+<td><p>supply</p></td>
+<td><p>2</p></td>
+<td><p>2</p></td>
+<td><p>eglvtnfet c</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>14</p></td>
+<td><p>wire_cap</p></td>
+<td><p>resistor</p></td>
+<td><p>w</p></td>
+<td></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>c</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>15</p></td>
+<td><p>phvcap_sig_sig_m1</p></td>
+<td><p>tiehi</p></td>
+<td></td>
+<td><p>sig_low</p></td>
+<td><p>2</p></td>
+<td><p>2</p></td>
+<td><p>c eglvtpfet</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>16</p></td>
+<td><p>pcaplvt_sig_gd_m1</p></td>
+<td><p>tiehi</p></td>
+<td></td>
+<td><p>sig_hig</p></td>
+<td><p>2</p></td>
+<td><p>3</p></td>
+<td><p>lvtpfet c</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>17</p></td>
+<td><p>phvcap_sig_sig_m1234</p></td>
+<td><p>tiehi</p></td>
+<td></td>
+<td><p>sig_low</p></td>
+<td><p>2</p></td>
+<td><p>2</p></td>
+<td><p>c eglvtpfet</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>18</p></td>
+<td><p>esdndsx_sti</p></td>
+<td><p>resistor</p></td>
+<td><p>vss padres</p></td>
+<td></td>
+<td><p>0</p></td>
+<td><p>2</p></td>
+<td></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>19</p></td>
+<td><p>stb_2</p></td>
+<td><p>resistor</p></td>
+<td><p>i o</p></td>
+<td></td>
+<td><p>0</p></td>
+<td><p>2</p></td>
+<td></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>20</p></td>
+<td><p>stb_diff_2</p></td>
+<td><p>resistor</p></td>
+<td><p>i in o on</p></td>
+<td></td>
+<td><p>0</p></td>
+<td><p>4</p></td>
+<td></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>21</p></td>
+<td><p>esdpdnw_sti</p></td>
+<td><p>resistor</p></td>
+<td><p>padres vdd</p></td>
+<td></td>
+<td><p>0</p></td>
+<td><p>2</p></td>
+<td></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>22</p></td>
+<td><p>ssp_esd_2nd_ndio</p></td>
+<td><p>Boolean extraction</p></td>
+<td><p>padres</p></td>
+<td></td>
+<td><p>1</p></td>
+<td><p>3</p></td>
+<td><p>esdndsx_sti</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>23</p></td>
+<td><p>ssp_esd_2nd_pdio</p></td>
+<td><p>Boolean extraction</p></td>
+<td><p>padres</p></td>
+<td></td>
+<td><p>1</p></td>
+<td><p>3</p></td>
+<td><p>esdpdnw_sti</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="after-topological-analysis-tue-mar-19-13-12-54-edt-2019">
+<h2>After Topological Analysis Tue Mar 19 13:12:54 EDT 2019<a class="headerlink" href="#after-topological-analysis-tue-mar-19-13-12-54-edt-2019" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-center">
+<colgroup>
+<col style="width: 2%" />
+<col style="width: 15%" />
+<col style="width: 14%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 24%" />
+<col style="width: 6%" />
+<col style="width: 7%" />
+<col style="width: 4%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>###</p></th>
+<th class="head"><p>cell</p></th>
+<th class="head"><p>topology</p></th>
+<th class="head"><p>inputs</p></th>
+<th class="head"><p>outputs</p></th>
+<th class="head"><p>#inst</p></th>
+<th class="head"><p>#pins</p></th>
+<th class="head"><p>sub-cells</p></th>
+<th class="head"><p>#analog</p></th>
+<th class="head"><p>#digital</p></th>
+<th class="head"><p>%</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>rx_afe_amps_old</p></td>
+<td></td>
+<td><p>bst__2</p></td>
+<td><p>atb_f_m</p></td>
+<td><p>8</p></td>
+<td><p>22</p></td>
+<td><p>rx_afe_amp_outoff rx_afe_pream</p></td>
+<td><p>243</p></td>
+<td><p>94</p></td>
+<td><p>72.1</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>rx_afe_preamp</p></td>
+<td></td>
+<td><p>bst__2</p></td>
+<td><p>fbmi fb</p></td>
+<td><p>70</p></td>
+<td><p>18</p></td>
+<td><p>rx_afe_preamp_req sctg_inv1x p</p></td>
+<td><p>50</p></td>
+<td><p>72</p></td>
+<td><p>40.9</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>rx_afe_preamp_req</p></td>
+<td><p>Boolean extraction</p></td>
+<td><p>s__2 <a href="#id7"><span class="problematic" id="id8">s_</span></a></p></td>
+<td><p>t1</p></td>
+<td><p>20</p></td>
+<td><p>7</p></td>
+<td><p>sc_na2x12_lvt sc_no2x12_lvt sc</p></td>
+<td><p>0</p></td>
+<td><p>70</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>rx_afe_amp_outoff</p></td>
+<td></td>
+<td><p><a href="#id9"><span class="problematic" id="id10">en_atb_</span></a></p></td>
+<td><p>atb_s_m</p></td>
+<td><p>61</p></td>
+<td><p>16</p></td>
+<td><p>eglvtnfet reopnpcres nhvcap_si</p></td>
+<td><p>119</p></td>
+<td><p>8</p></td>
+<td><p>93.7</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>rx_afe_amp_inoff</p></td>
+<td></td>
+<td><p><a href="#id11"><span class="problematic" id="id12">en_atb_</span></a></p></td>
+<td><p>atb_s_m</p></td>
+<td><p>99</p></td>
+<td><p>14</p></td>
+<td><p>phvcap_sig_sig_m1 stb_diff_2 r</p></td>
+<td><p>74</p></td>
+<td><p>6</p></td>
+<td><p>92.5</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>rx_afe_ac_couple</p></td>
+<td><p>Boolean extraction</p></td>
+<td><p>vcmfb v</p></td>
+<td><p>vac_m v</p></td>
+<td><p>50</p></td>
+<td><p>10</p></td>
+<td><p>ssp_esd_2nd_ndio ssp_esd_2nd_p</p></td>
+<td><p>0</p></td>
+<td><p>8</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td><p>_ccb125</p></td>
+<td><p>diff_pair **</p></td>
+<td><p>om op p</p></td>
+<td><p>vbp vof</p></td>
+<td><p>11</p></td>
+<td><p>10</p></td>
+<td><p>stran_nmos eglvtnfet eglvtpfet</p></td>
+<td><p>11</p></td>
+<td><p>0</p></td>
+<td><p>100</p></td>
+</tr>
+<tr class="row-odd"><td><p>8</p></td>
+<td><p>sc_no3x6_lvt</p></td>
+<td><p>Boolean extraction</p></td>
+<td><p>a b c</p></td>
+<td><p>z</p></td>
+<td><p>9</p></td>
+<td><p>6</p></td>
+<td><p>lvtnfet lvtpfet</p></td>
+<td><p>0</p></td>
+<td><p>9</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>9</p></td>
+<td><p>_ccb127</p></td>
+<td><p>diff_pair **</p></td>
+<td><p>o pwr_h</p></td>
+<td><p>vbn vbp</p></td>
+<td><p>7</p></td>
+<td><p>7</p></td>
+<td><p>stran_pmos stran_nmos eglvtnfe</p></td>
+<td><p>6</p></td>
+<td><p>0</p></td>
+<td><p>100</p></td>
+</tr>
+<tr class="row-odd"><td><p>10</p></td>
+<td><p>_ccb27</p></td>
+<td><p>diff_pair</p></td>
+<td><p>om op p</p></td>
+<td><p>voff_m</p></td>
+<td><p>5</p></td>
+<td><p>8</p></td>
+<td><p>stran_pmos eglvtpfet eglvtnfet</p></td>
+<td><p>5</p></td>
+<td><p>0</p></td>
+<td><p>100</p></td>
+</tr>
+<tr class="row-even"><td><p>11</p></td>
+<td><p>sc_no2x12_lvt</p></td>
+<td><p>nor</p></td>
+<td><p>a b</p></td>
+<td><p>z</p></td>
+<td><p>5</p></td>
+<td><p>5</p></td>
+<td><p>lvtnfet lvtpfet</p></td>
+<td><p>0</p></td>
+<td><p>4</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>12</p></td>
+<td><p>sc_na2x12_lvt</p></td>
+<td><p>nand</p></td>
+<td><p>a b</p></td>
+<td><p>z</p></td>
+<td><p>8</p></td>
+<td><p>5</p></td>
+<td><p>lvtpfet lvtnfet</p></td>
+<td><p>0</p></td>
+<td><p>4</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>13</p></td>
+<td><p>_ccb122</p></td>
+<td><p>bias</p></td>
+<td><p>pwr_h</p></td>
+<td><p>ib18 vbp</p></td>
+<td><p>3</p></td>
+<td><p>5</p></td>
+<td><p>eglvtpfet stran_pmos eglvtnfet</p></td>
+<td><p>3</p></td>
+<td><p>0</p></td>
+<td><p>100</p></td>
+</tr>
+<tr class="row-odd"><td><p>14</p></td>
+<td><p>_switch1</p></td>
+<td><p>switch</p></td>
+<td><p><a href="#id13"><span class="problematic" id="id14">en_atb_</span></a></p></td>
+<td><p>ip <a href="#id15"><span class="problematic" id="id16">atb_</span></a></p></td>
+<td><p>2</p></td>
+<td><p>5</p></td>
+<td><p>eglvtnfet eglvtpfet</p></td>
+<td><p>0</p></td>
+<td><p>2</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>15</p></td>
+<td><p>_switch2</p></td>
+<td><p>switch</p></td>
+<td><p><a href="#id17"><span class="problematic" id="id18">en_atb_</span></a></p></td>
+<td><p>im <a href="#id19"><span class="problematic" id="id20">atb_</span></a></p></td>
+<td><p>2</p></td>
+<td><p>5</p></td>
+<td><p>eglvtnfet eglvtpfet</p></td>
+<td><p>0</p></td>
+<td><p>2</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>16</p></td>
+<td><p>_switch3</p></td>
+<td><p>switch</p></td>
+<td><p>en_marg</p></td>
+<td><p>net0135</p></td>
+<td><p>2</p></td>
+<td><p>5</p></td>
+<td><p>eglvtnfet eglvtpfet</p></td>
+<td><p>0</p></td>
+<td><p>2</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>17</p></td>
+<td><p>_switch4</p></td>
+<td><p>switch</p></td>
+<td><p>en_marg</p></td>
+<td><p>net0190</p></td>
+<td><p>2</p></td>
+<td><p>5</p></td>
+<td><p>eglvtnfet eglvtpfet</p></td>
+<td><p>0</p></td>
+<td><p>2</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>18</p></td>
+<td><p>_switch5</p></td>
+<td><p>switch</p></td>
+<td><p><a href="#id21"><span class="problematic" id="id22">en_atb_</span></a></p></td>
+<td><p>net741</p></td>
+<td><p>2</p></td>
+<td><p>5</p></td>
+<td><p>eglvtpfet eglvtnfet</p></td>
+<td><p>0</p></td>
+<td><p>2</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>19</p></td>
+<td><p>_switch6</p></td>
+<td><p>switch</p></td>
+<td><p><a href="#id23"><span class="problematic" id="id24">en_atb_</span></a></p></td>
+<td><p>net734</p></td>
+<td><p>2</p></td>
+<td><p>5</p></td>
+<td><p>eglvtnfet eglvtpfet</p></td>
+<td><p>0</p></td>
+<td><p>2</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>20</p></td>
+<td><p>sctg_inv2x</p></td>
+<td><p>inverter</p></td>
+<td><p>a</p></td>
+<td><p>z</p></td>
+<td><p>2</p></td>
+<td><p>4</p></td>
+<td><p>eglvtnfet eglvtpfet</p></td>
+<td><p>0</p></td>
+<td><p>2</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>21</p></td>
+<td><p>_ccb129</p></td>
+<td><p>tiehi</p></td>
+<td></td>
+<td><p>vbnc vbp</p></td>
+<td><p>2</p></td>
+<td><p>4</p></td>
+<td><p>eglvtpfet stran_nmos</p></td>
+<td><p>2</p></td>
+<td><p>0</p></td>
+<td><p>100</p></td>
+</tr>
+<tr class="row-odd"><td><p>22</p></td>
+<td><p>sc_invx8_lvt</p></td>
+<td><p>inverter</p></td>
+<td><p>a</p></td>
+<td><p>z</p></td>
+<td><p>5</p></td>
+<td><p>4</p></td>
+<td><p>lvtpfet lvtnfet</p></td>
+<td><p>0</p></td>
+<td><p>2</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>23</p></td>
+<td><p>sctg_inv1x</p></td>
+<td><p>inverter</p></td>
+<td><p>a</p></td>
+<td><p>z</p></td>
+<td><p>2</p></td>
+<td><p>4</p></td>
+<td><p>eglvtnfet eglvtpfet</p></td>
+<td><p>0</p></td>
+<td><p>2</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>24</p></td>
+<td><p>phvcap_sig_sig_m1234</p></td>
+<td><p>tiehi</p></td>
+<td></td>
+<td><p>sig_low</p></td>
+<td><p>2</p></td>
+<td><p>2</p></td>
+<td><p>c eglvtpfet</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>25</p></td>
+<td><p>wire_cap</p></td>
+<td><p>resistor</p></td>
+<td><p>w</p></td>
+<td></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>c</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>26</p></td>
+<td><p>pcaplvt_sig_gd_m1</p></td>
+<td><p>tiehi</p></td>
+<td></td>
+<td><p>sig_hig</p></td>
+<td><p>2</p></td>
+<td><p>3</p></td>
+<td><p>lvtpfet c</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>27</p></td>
+<td><p>nhvcap_sig_gd_m1</p></td>
+<td><p>tiehi</p></td>
+<td></td>
+<td><p>supply</p></td>
+<td><p>2</p></td>
+<td><p>2</p></td>
+<td><p>eglvtnfet c</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>28</p></td>
+<td><p>phvcap_sig_sig_m1</p></td>
+<td><p>tiehi</p></td>
+<td></td>
+<td><p>sig_low</p></td>
+<td><p>2</p></td>
+<td><p>2</p></td>
+<td><p>c eglvtpfet</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>29</p></td>
+<td><p>esdndsx_sti</p></td>
+<td><p>resistor</p></td>
+<td><p>vss padres</p></td>
+<td></td>
+<td><p>0</p></td>
+<td><p>2</p></td>
+<td></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>30</p></td>
+<td><p>stb_diff_2</p></td>
+<td><p>resistor</p></td>
+<td><p>i in o on</p></td>
+<td></td>
+<td><p>0</p></td>
+<td><p>4</p></td>
+<td></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>31</p></td>
+<td><p>esdpdnw_sti</p></td>
+<td><p>resistor</p></td>
+<td><p>padres vdd</p></td>
+<td></td>
+<td><p>0</p></td>
+<td><p>2</p></td>
+<td></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>32</p></td>
+<td><p>ssp_esd_2nd_pdio</p></td>
+<td><p>Boolean extraction</p></td>
+<td><p>padres</p></td>
+<td></td>
+<td><p>1</p></td>
+<td><p>3</p></td>
+<td><p>esdpdnw_sti</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>33</p></td>
+<td><p>ssp_esd_2nd_ndio</p></td>
+<td><p>Boolean extraction</p></td>
+<td><p>padres</p></td>
+<td></td>
+<td><p>1</p></td>
+<td><p>3</p></td>
+<td><p>esdndsx_sti</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>34</p></td>
+<td><p>stb_2</p></td>
+<td><p>resistor</p></td>
+<td><p>i o</p></td>
+<td></td>
+<td><p>0</p></td>
+<td><p>2</p></td>
+<td></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="net-inter-dependences-tue-mar-19-13-12-54-edt-2019">
+<h2>Net inter-dependences Tue Mar 19 13:12:54 EDT 2019<a class="headerlink" href="#net-inter-dependences-tue-mar-19-13-12-54-edt-2019" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-center">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 16%" />
+<col style="width: 19%" />
+<col style="width: 38%" />
+<col style="width: 19%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>###</p></th>
+<th class="head"><p>net</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>depends on</p></th>
+<th class="head"><p>how?</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">degem</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="whats_degem.html">What is DEGEM?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manual.html">Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="API.html">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="library.html">Topology library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="internal_flow.html">Flow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="algorithms.html">Algorithms</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="test_regression.html">Test Bench</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="test_regression.html#glossary">Glossary</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="test_regression.html">Test Bench</a><ul>
+      <li>Previous: <a href="test_regression.html" title="previous chapter">Test Bench</a></li>
+      <li>Next: <a href="circuits:SG:pll:TOP.html" title="next chapter">TOP</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Yishai Statter.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.0.0+</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/circuits:SG:afe:rx_afe_amps_old.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
